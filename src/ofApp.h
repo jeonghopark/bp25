@@ -2,18 +2,17 @@
 
 #include "ofMain.h"
 #include "ofxGui.h"
-#include "ofxSvg.h"
+
+#include "sceneManager.hpp"
+#include "baseScene.hpp"
+
+#include "basicLineDrawing.hpp"
+
+
 
 class ofApp : public ofBaseApp{
     
-    struct ImageRatio{
-        float cWidth;
-        float cHeight;
-        
-        float xOffSet;
-        float yOffSet;
-    };
-
+    
 public:
     void setup();
     void setupGui();
@@ -34,30 +33,10 @@ public:
     void dragEvent(ofDragInfo dragInfo);
     void gotMessage(ofMessage msg);
     
-    ofJson jsHouseObjectPoint;
-    void jsonLoad();
     
     vector<ofVec2f> houseObjectPoint;
     
-    ofImage houseImage;
-    ofImage houseBlankImage;
     
-    void houseImageDraw();
-    float houseScaleRatio;
-    
-    void basePointsDraw();
-    
-    void drawBaseLine(vector<ofPolyline> & outlines);
-    void drawBaseVerticalLine(vector<ofPolyline> & outlines);
-    void drawBackBaseLine(vector<ofPolyline> & outlines);
-    void drawBackBaseLineRepeat(vector<ofPolyline> & outlines, int layerNum = 1);
-    
-    ImageRatio imageRatio;
-    
-    ofxSVG svg;
-    float step;
-    float speedDirect;
-    vector<ofPolyline> outlines;
     
     // GUI
     ofParameterGroup parameters;
@@ -66,7 +45,10 @@ public:
     ofParameter<float> motionSpeed;
     ofxPanel gui;
     
-
+    
+    
+    sceneManager SM;
+    
     
 };
 
