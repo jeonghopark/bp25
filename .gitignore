@@ -1,0 +1,27 @@
+## osx & ios
+
+*.depend
+*.layout
+*.mode*v3
+*.pbxuser
+*.app*
+*.DS_*
+*.xcworkspacedata
+xcuserdata/
+project.xcworkspace
+
+
+*.xcodeproj
+*.xcconfig
+config.make
+*.plist
+Makefile
+
+
+.svn/
+obj/
+!bin/
+build/
+
+
+## ————————
