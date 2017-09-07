@@ -27,6 +27,7 @@ void ofApp::setup(){
     ofBackground(0);
     
     SM.scenes.push_back( new basicLineDrawing() );
+    SM.scenes.push_back( new shaderBasic() );
     SM.setup();
     
     for (int i = 0; i < SM.scenes.size(); i++){
@@ -44,7 +45,8 @@ void ofApp::update(){
     
     SM.update();
     GM.update();
-         
+    
+    
 }
 
 
@@ -63,6 +65,10 @@ void ofApp::draw(){
 //--------------------------------------------------------------
 void ofApp::keyPressed(int key){
     
+    if (key == OF_KEY_RIGHT){
+        SM.nextScene();
+    }
+
 }
 
 

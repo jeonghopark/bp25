@@ -8,6 +8,7 @@
 #include "baseScene.hpp"
 
 #include "basicLineDrawing.hpp"
+#include "shaderBasic.hpp"
 
 
 class ofApp : public ofBaseApp{
@@ -35,16 +36,6 @@ public:
     
     
     vector<ofVec2f> houseObjectPoint;
-    
-    
-    
-//    // GUI
-//    ofParameterGroup parameters;
-//    ofParameter<bool> motion;
-//    ofParameter<bool> houseView;
-//    ofParameter<float> motionSpeed;
-//    ofxPanel gui;
-    
     
     guiManager GM;
     sceneManager SM;
