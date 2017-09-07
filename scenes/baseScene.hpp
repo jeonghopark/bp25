@@ -10,7 +10,7 @@
 #define baseScene_hpp
 
 #include "ofMain.h"
-
+#include "guiManager.hpp"
 
 class baseScene {
   
@@ -19,8 +19,8 @@ public:
     virtual void setup(){};
     virtual void update(){};
     virtual void draw(){};
-    
-    
+
+    guiManager * GM;
 };
 
 

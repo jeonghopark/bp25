@@ -22,7 +22,7 @@ void sceneManager::setup(){
 void sceneManager::update(){
     
     scenes[currentScene]->update();
-    
+        
 }
 
 

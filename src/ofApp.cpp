@@ -3,18 +3,21 @@
 
 //--------------------------------------------------------------
 void ofApp::setupGui(){
-    parameters.setName("parameters");
-    parameters.add(houseView.set("House View", false));
-    parameters.add(motion.set("Motion", false));
-    parameters.add(motionSpeed.set("Motion Speed", 1, 0.3, 5));
-    gui.setup(parameters);
-    ofSetBackgroundColor(0);
+//    parameters.setName("parameters");
+//    parameters.add(houseView.set("House View", false));
+//    parameters.add(motion.set("Motion", false));
+//    parameters.add(motionSpeed.set("Motion Speed", 1, 0.3, 5));
+//    gui.setup(parameters);
+//    ofSetBackgroundColor(0);
+ 
+    GM.setup();
+
 }
 
 
 //--------------------------------------------------------------
 void ofApp::drawGui(ofEventArgs & args){
-    gui.draw();
+    GM.draw();
 }
 
 
@@ -26,6 +29,12 @@ void ofApp::setup(){
     SM.scenes.push_back( new basicLineDrawing() );
     SM.setup();
     
+    for (int i = 0; i < SM.scenes.size(); i++){
+        SM.scenes[i]->GM = &GM;
+    }
+
+    //    GM.setup();
+
 }
 
 
@@ -34,7 +43,8 @@ void ofApp::setup(){
 void ofApp::update(){
     
     SM.update();
-    
+    GM.update();
+         
 }
 
 

@@ -47,8 +47,6 @@ public:
 
     ofImage houseImage;
     ImageRatio imageRatio;
-
-    bool motion;
     
 };
 

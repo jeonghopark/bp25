@@ -36,7 +36,6 @@ void basicLineDrawing::setup(){
     step = 0;
     speedDirect = 0.01;
     
-    motion = true;
 }
 
 
@@ -44,14 +43,14 @@ void basicLineDrawing::setup(){
 void basicLineDrawing::update(){
     
     
-    if (motion) {
+    if (GM->motion) {
         if (step > 0.99) {
             speedDirect = -0.01;
         } else if ( step < 0 ) {
             speedDirect = 0.01;
         }
         
-        step = step + speedDirect;
+        step = step + speedDirect * GM->motionSpeed;
     } else {
         step = 0;
         speedDirect = 0.01;

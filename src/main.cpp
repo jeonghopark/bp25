@@ -13,25 +13,27 @@ int main( ){
 	ofRunApp(new ofApp());
 
     ofGLFWWindowSettings settings;
+    
     settings.width = 625;       // 625  / 540
     settings.height = 1000;      // 1000 / 864
-    settings.setPosition(ofVec2f(-1000, 0));
+    settings.setPosition(ofVec2f(-625, 0));
     settings.resizable = true;
     shared_ptr<ofAppBaseWindow> mainWindow = ofCreateWindow(settings);
     
     settings.width = 300;
-    settings.height = 600;
+    settings.height = 700;
     settings.setPosition(ofVec2f(0,0));
-    settings.resizable = false;
+    settings.setPosition(ofVec2f(-1225, 0));
+    settings.resizable = true;
     // uncomment next line to share main's OpenGL resources with gui
     //settings.shareContextWith = mainWindow;
     shared_ptr<ofAppBaseWindow> guiWindow = ofCreateWindow(settings);
-    guiWindow->setVerticalSync(false);
+//    guiWindow->setVerticalSync(false);
     
     shared_ptr<ofApp> mainApp(new ofApp);
-    mainApp->setupGui();
+    mainApp->GM.setupGui();
     ofAddListener(guiWindow->events().draw,mainApp.get(),&ofApp::drawGui);
-    
+
     ofRunApp(mainWindow, mainApp);
     ofRunMainLoop();
 

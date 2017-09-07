@@ -4,10 +4,10 @@
 #include "ofxGui.h"
 
 #include "sceneManager.hpp"
+#include "guiManager.hpp"
 #include "baseScene.hpp"
 
 #include "basicLineDrawing.hpp"
-
 
 
 class ofApp : public ofBaseApp{
@@ -38,15 +38,15 @@ public:
     
     
     
-    // GUI
-    ofParameterGroup parameters;
-    ofParameter<bool> motion;
-    ofParameter<bool> houseView;
-    ofParameter<float> motionSpeed;
-    ofxPanel gui;
+//    // GUI
+//    ofParameterGroup parameters;
+//    ofParameter<bool> motion;
+//    ofParameter<bool> houseView;
+//    ofParameter<float> motionSpeed;
+//    ofxPanel gui;
     
     
-    
+    guiManager GM;
     sceneManager SM;
     
     
