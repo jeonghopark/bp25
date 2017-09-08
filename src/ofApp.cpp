@@ -20,6 +20,7 @@ void ofApp::setup(){
     SM.scenes.push_back( new basicLineDrawing() );
     SM.scenes.push_back( new shaderBasic() );
     SM.scenes.push_back( new shaderLine() );
+    SM.scenes.push_back( new shaderShape() );
     SM.setup();
     
     for (int i = 0; i < SM.scenes.size(); i++){

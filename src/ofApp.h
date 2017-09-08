@@ -10,6 +10,7 @@
 #include "basicLineDrawing.hpp"
 #include "shaderBasic.hpp"
 #include "shaderLine.hpp"
+#include "shaderShape.hpp"
 
 
 class ofApp : public ofBaseApp{
