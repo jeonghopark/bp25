@@ -14,14 +14,6 @@
 
 class shaderShape : public baseScene{
   
-    struct ImageRatio{
-        float cWidth;
-        float cHeight;
-        
-        float xOffSet;
-        float yOffSet;
-    };
-    
     
 public:
     
@@ -31,14 +23,8 @@ public:
     void keyPressed(int key);
     
     
-    ofImage houseImage;
     ofShader shader_01;
-    
-    float houseScaleRatio;
-    
-    ImageRatio imageRatio;
-    
-    
+        
 };
 
 

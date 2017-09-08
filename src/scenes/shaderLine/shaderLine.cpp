@@ -26,10 +26,7 @@ void shaderLine::setup(){
 
 	houseScaleRatio = 0.45;
 
-	houseImage.load("fassade_apotheke_alpha.png");
-    //    houseBlankImage
-
-    //    jsonLoad();
+    houseImage.load("fassade_apotheke_alpha.png");
 
 	imageRatio.cWidth = houseImage.getWidth() * houseScaleRatio;
 	imageRatio.cHeight = houseImage.getHeight() * houseScaleRatio;
@@ -88,11 +85,6 @@ void shaderLine::draw(){
 
 	ofPopMatrix();
 	ofPopStyle();
-
-
-    ofSetColor(255);
-    houseImage.draw(imageRatio.xOffSet, imageRatio.yOffSet, imageRatio.cWidth, imageRatio.cHeight);
-
 
 }
 

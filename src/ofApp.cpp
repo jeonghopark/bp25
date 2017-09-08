@@ -27,6 +27,7 @@ void ofApp::setup(){
         SM.scenes[i]->GM = &GM;
     }
 
+    HouseBlackCover.setup();
 }
 
 
@@ -36,7 +37,7 @@ void ofApp::update(){
     
     SM.update();
     GM.update();
-
+    
 }
 
 
@@ -46,6 +47,8 @@ void ofApp::update(){
 void ofApp::draw(){
     
     SM.draw();
+    
+    HouseBlackCover.draw();
     
 }
 

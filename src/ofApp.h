@@ -7,10 +7,13 @@
 #include "guiManager.hpp"
 #include "baseScene.hpp"
 
+#include "houseBlackCover.hpp"
+
 #include "basicLineDrawing.hpp"
 #include "shaderBasic.hpp"
 #include "shaderLine.hpp"
 #include "shaderShape.hpp"
+
 
 
 class ofApp : public ofBaseApp{
@@ -41,6 +44,9 @@ public:
     
     guiManager GM;
     sceneManager SM;
+    
+    
+    houseBlackCover HouseBlackCover;
     
     
 };
