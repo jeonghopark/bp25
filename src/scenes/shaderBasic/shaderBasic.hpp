@@ -14,6 +14,17 @@
 
 class shaderBasic : public baseScene{
     
+    struct ImageRatio{
+        float cWidth;
+        float cHeight;
+        
+        float xOffSet;
+        float yOffSet;
+    };
+
+    
+public:
+    
     void setup();
     void update();
     void draw();
@@ -25,7 +36,7 @@ class shaderBasic : public baseScene{
     
     float houseScaleRatio;
     
-//    ImageRatio imageRatio;
+    ImageRatio imageRatio;
 
     
 };

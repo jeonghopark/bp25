@@ -87,6 +87,8 @@ void basicLineDrawing::draw(){
 //--------------------------------------------------------------
 void basicLineDrawing::drawBaseLine(vector<ofPolyline> & outlines){
     
+    ofPushStyle();
+    ofSetColor(255, 0, 0, 255);
     for (int i = 0; i < (int)outlines.size(); i++){
         ofPolyline & _line = outlines[i];
         
@@ -97,9 +99,9 @@ void basicLineDrawing::drawBaseLine(vector<ofPolyline> & outlines){
             ofVertex(_line[j] * houseScaleRatio * 0.8);
         }
         ofEndShape();
-        
     }
-    
+    ofPopStyle();
+
 }
 
 

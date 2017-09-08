@@ -14,16 +14,20 @@ int main( ){
 
     ofGLFWWindowSettings settings;
     
-    settings.width = 625;       // 625  / 540
-    settings.height = 1000;      // 1000 / 864
-    settings.setPosition(ofVec2f(-625, 0));
+    settings.width = 550;       // 625  / 550
+    settings.height = 880;      // 1000 / 880
+    settings.setPosition(ofVec2f(0, 0));
+    settings.decorated = false;
+    settings.windowMode = OF_WINDOW;
     settings.resizable = true;
     shared_ptr<ofAppBaseWindow> mainWindow = ofCreateWindow(settings);
     
     settings.width = 300;
     settings.height = 700;
     settings.setPosition(ofVec2f(0,0));
-    settings.setPosition(ofVec2f(-1225, 0));
+    settings.setPosition(ofVec2f(600, 0));
+    settings.decorated = true;
+    settings.windowMode = OF_WINDOW;
     settings.resizable = true;
     // uncomment next line to share main's OpenGL resources with gui
     //settings.shareContextWith = mainWindow;
