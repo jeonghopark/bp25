@@ -47,9 +47,7 @@ public:
 
     ofImage houseImage;
     ImageRatio imageRatio;
-    
 
-    ofShader shader_01;
     
 };
 

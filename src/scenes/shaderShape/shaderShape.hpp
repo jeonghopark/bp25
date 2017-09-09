@@ -25,7 +25,7 @@ public:
     void updateShader();
     
     
-    ofShader shader_01;
+    ofShader shaderNoise;
         
 };
 

@@ -30,7 +30,7 @@ void shaderVertical::draw(){
     shaderVertical.begin();
     shaderVertical.setUniform1f("u_time", ofGetElapsedTimef());
     shaderVertical.setUniform2f("u_resolution", ofGetWidth(), ofGetHeight());
-    ofRect(0,0,ofGetWidth(), ofGetHeight());
+    ofDrawRectangle(0,0,ofGetWidth(), ofGetHeight());
     shaderVertical.end();
 
 

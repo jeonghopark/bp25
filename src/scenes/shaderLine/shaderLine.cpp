@@ -11,7 +11,7 @@
 //--------------------------------------------------------------
 void shaderLine::setup(){
 
-	shader_01.load("", "shader/shader.frag");
+	shaderNoise.load("", "shader/shader.frag");
 
 
 	svg.load("fassade_apotheke_10x16.svg");
@@ -72,16 +72,16 @@ void shaderLine::draw(){
 	ofPushMatrix();
 	ofTranslate(imageRatio.xOffSet, imageRatio.yOffSet);
 
-    shader_01.begin();
-    shader_01.setUniform1f("u_time", ofGetElapsedTimef());
-    shader_01.setUniform2f("u_resolution", ofGetWidth(), ofGetHeight());
+    shaderNoise.begin();
+    shaderNoise.setUniform1f("u_time", ofGetElapsedTimef());
+    shaderNoise.setUniform2f("u_resolution", ofGetWidth(), ofGetHeight());
     
     drawBaseLine(outlines);
 	drawBaseVerticalLine(outlines);
 	drawBackBaseLine(outlines);
 	drawBackBaseLineRepeat(outlines, 3);
 
-    shader_01.end();
+    shaderNoise.end();
 
 	ofPopMatrix();
 	ofPopStyle();
@@ -187,5 +187,5 @@ void shaderLine::drawBackBaseLineRepeat(vector<ofPolyline> & outlines, int layer
 
 //--------------------------------------------------------------
 void shaderLine::updateShader(){
-    shader_01.load("", "shader/shader.frag");
+    shaderNoise.load("", "shader/shaderNoise.frag");
 }

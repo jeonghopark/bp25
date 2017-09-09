@@ -11,7 +11,7 @@
 //--------------------------------------------------------------
 void shaderBasic::setup(){
     
-    shader_01.load("", "shader/shader.frag");
+    shaderNoise.load("", "shader/shaderNoise.frag");
 
 
 }
@@ -30,11 +30,11 @@ void shaderBasic::update(){
 //--------------------------------------------------------------
 void shaderBasic::draw(){
     
-    shader_01.begin();
-    shader_01.setUniform1f("u_time", ofGetElapsedTimef());
-    shader_01.setUniform2f("u_resolution", ofGetWidth(), ofGetHeight());
-    ofRect(0,0,ofGetWidth(), ofGetHeight());
-    shader_01.end();
+    shaderNoise.begin();
+    shaderNoise.setUniform1f("u_time", ofGetElapsedTimef());
+    shaderNoise.setUniform2f("u_resolution", ofGetWidth(), ofGetHeight());
+    ofDrawRectangle(0,0,ofGetWidth(), ofGetHeight());
+    shaderNoise.end();
     
 }
 
@@ -43,5 +43,5 @@ void shaderBasic::draw(){
 
 //--------------------------------------------------------------
 void shaderBasic::updateShader(){
-    shader_01.load("", "shader/shader.frag");
+    shaderNoise.load("", "shader/shaderNoise.frag");
 }

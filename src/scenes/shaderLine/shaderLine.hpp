@@ -44,7 +44,7 @@ public:
     void drawBackBaseLineRepeat(vector<ofPolyline> & outlines, int layerNum = 1);
 
     
-    ofShader shader_01;
+    ofShader shaderNoise;
 
     float houseScaleRatio;
 
