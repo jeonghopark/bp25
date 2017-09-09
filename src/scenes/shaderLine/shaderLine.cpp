@@ -186,6 +186,6 @@ void shaderLine::drawBackBaseLineRepeat(vector<ofPolyline> & outlines, int layer
 
 
 //--------------------------------------------------------------
-void shaderLine::keyPressed(int key){
+void shaderLine::updateShader(){
     shader_01.load("", "shader/shader.frag");
 }

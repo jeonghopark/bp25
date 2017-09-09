@@ -1,5 +1,5 @@
 //
-//  subView.hpp
+//  stageView.hpp
 //  bp_25
 //
 //  Created by JeongHo Park on 09.09.17.
@@ -8,8 +8,8 @@
 #pragma once
 
 
-#ifndef subView_hpp
-#define subView_hpp
+#ifndef stageView_hpp
+#define stageView_hpp
 
 #include "ofMain.h"
 
@@ -18,7 +18,7 @@
 #include "baseScene.hpp"
 
 
-class subView : public ofBaseApp{
+class stageView : public ofBaseApp{
     
 public:
     void setup();
@@ -29,7 +29,9 @@ public:
 
     guiManager GM;
     
+    float _testMoving_;
+    
 };
 
 
-#endif /* subView_hpp */
+#endif /* stageView_hpp */

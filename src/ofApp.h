@@ -11,6 +11,7 @@
 
 #include "basicLineDrawing.hpp"
 #include "shaderBasic.hpp"
+#include "shaderVertical.hpp"
 #include "shaderLine.hpp"
 #include "shaderShape.hpp"
 

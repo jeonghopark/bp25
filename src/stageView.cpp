@@ -1,45 +1,50 @@
 //
-//  subView.cpp
+//  stageView.cpp
 //  bp_25
 //
 //  Created by JeongHo Park on 09.09.17.
 //
 
-#include "subView.hpp"
+#include "stageView.hpp"
 
 
 //--------------------------------------------------------------
-void subView::setupGui(){
+void stageView::setupGui(){
     GM.setup();
 }
 
 
 //--------------------------------------------------------------
-void subView::drawGui(ofEventArgs & args){
+void stageView::drawGui(ofEventArgs & args){
 //    GM.draw();
 }
 
 
 
 //--------------------------------------------------------------
-void subView::setup(){
+void stageView::setup(){
     
     ofBackground(120, 0, 0);
     
-}
-
-
-
-//--------------------------------------------------------------
-void subView::update(){
-    
+    _testMoving_ = 0;
     
 }
 
 
 
 //--------------------------------------------------------------
-void subView::draw(){
+void stageView::update(){
     
+    _testMoving_ += 5;
+    
+}
+
+
+
+//--------------------------------------------------------------
+void stageView::draw(){
+    
+    ofSetColor(255);
+    ofDrawRectangle( sin(ofDegToRad(_testMoving_)) * 200 + ofGetWidth() * 0.5, ofGetHeight() * 0.5, 20, 20);
     
 }

@@ -57,5 +57,13 @@ void sceneManager::previousScene(){
 }
 
 
+//--------------------------------------------------------------
+void sceneManager::updateShader(){
+    
+    scenes[currentScene]->updateShader();
+    
+}
+
+
 
 

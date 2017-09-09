@@ -25,6 +25,7 @@ public:
     void nextScene();
     void previousScene();
     
+    void updateShader();
     
     vector < baseScene * > scenes;
     int currentScene;

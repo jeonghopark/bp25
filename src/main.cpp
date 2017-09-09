@@ -1,7 +1,7 @@
 #include "ofMain.h"
 #include "ofApp.h"
 #include "ofAppGLFWWindow.h"
-#include "subView.hpp"
+#include "stageView.hpp"
 
 
 //========================================================================
@@ -12,7 +12,7 @@ int main( ){
 	// can be OF_WINDOW or OF_FULLSCREEN
 	// pass in width and height too:
 	ofRunApp(new ofApp());
-    ofRunApp(new subView());
+    ofRunApp(new stageView());
 
     ofGLFWWindowSettings settings;
     
@@ -45,14 +45,13 @@ int main( ){
 //    guiWindow->setVerticalSync(false);
     
     
-    
     shared_ptr<ofApp> mainApp(new ofApp);
     mainApp->GM.setupGui();
     ofAddListener(guiWindow->events().draw,mainApp.get(),&ofApp::drawGui);
 
-    shared_ptr<subView> subApp(new subView);
+    shared_ptr<stageView> subApp(new stageView);
     subApp->GM.setupGui();
-    ofAddListener(guiWindow->events().draw,subApp.get(),&subView::drawGui);
+    ofAddListener(guiWindow->events().draw,subApp.get(),&stageView::drawGui);
 
     ofRunApp(mainWindow, mainApp);
     ofRunApp(subWindow, subApp);

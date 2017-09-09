@@ -42,6 +42,6 @@ void shaderBasic::draw(){
 
 
 //--------------------------------------------------------------
-void shaderBasic::keyPressed(int key){
+void shaderBasic::updateShader(){
     shader_01.load("", "shader/shader.frag");
 }

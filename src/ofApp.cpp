@@ -19,6 +19,7 @@ void ofApp::setup(){
     
     SM.scenes.push_back( new basicLineDrawing() );
     SM.scenes.push_back( new shaderBasic() );
+    SM.scenes.push_back( new shaderVertical() );
     SM.scenes.push_back( new shaderLine() );
     SM.scenes.push_back( new shaderShape() );
     SM.setup();
@@ -64,6 +65,10 @@ void ofApp::keyPressed(int key){
 
     if (key == OF_KEY_LEFT){
         SM.previousScene();
+    }
+
+    if (key == OF_KEY_UP){
+        SM.updateShader();
     }
 
 }
