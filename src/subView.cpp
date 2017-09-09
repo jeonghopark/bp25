@@ -21,6 +21,7 @@ void subView::drawGui(ofEventArgs & args){
 
 
 
+//--------------------------------------------------------------
 void subView::setup(){
     
     ofBackground(120, 0, 0);
@@ -29,6 +30,7 @@ void subView::setup(){
 
 
 
+//--------------------------------------------------------------
 void subView::update(){
     
     
@@ -36,6 +38,7 @@ void subView::update(){
 
 
 
+//--------------------------------------------------------------
 void subView::draw(){
     
     

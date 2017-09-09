@@ -7,6 +7,8 @@
 
 #include "guiManager.hpp"
 
+
+//--------------------------------------------------------------
 void guiManager::setupGui(){
     
     mainGui.setName("Main");

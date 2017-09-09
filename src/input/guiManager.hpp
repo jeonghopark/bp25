@@ -4,6 +4,7 @@
 //
 //  Created by JeongHo Park on 07.09.17.
 //
+#pragma once
 
 #ifndef guiManager_hpp
 #define guiManager_hpp

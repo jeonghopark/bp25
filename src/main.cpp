@@ -44,6 +44,8 @@ int main( ){
     shared_ptr<ofAppBaseWindow> guiWindow = ofCreateWindow(settings);
 //    guiWindow->setVerticalSync(false);
     
+    
+    
     shared_ptr<ofApp> mainApp(new ofApp);
     mainApp->GM.setupGui();
     ofAddListener(guiWindow->events().draw,mainApp.get(),&ofApp::drawGui);

@@ -4,6 +4,8 @@
 //
 //  Created by JeongHo Park on 08.09.17.
 //
+#pragma once
+
 
 #ifndef shaderLine_hpp
 #define shaderLine_hpp

@@ -4,6 +4,8 @@
 //
 //  Created by JeongHo Park on 07.09.17.
 //
+#pragma once
+
 
 #ifndef shaderBasic_hpp
 #define shaderBasic_hpp
