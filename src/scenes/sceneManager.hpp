@@ -23,6 +23,7 @@ public:
     void update();
     void draw();
     void nextScene();
+    void previousScene();
     
     
     vector < baseScene * > scenes;

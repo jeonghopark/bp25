@@ -74,7 +74,7 @@ void basicLineDrawing::draw(){
     drawBaseLine(outlines);
     drawBaseVerticalLine(outlines);
     drawBackBaseLine(outlines);
-    drawBackBaseLineRepeat(outlines, 3);
+    drawBackBaseLineRepeat(outlines, 1);
     
     ofPopMatrix();
     ofPopStyle();

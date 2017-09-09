@@ -1,6 +1,7 @@
 #include "ofMain.h"
 #include "ofApp.h"
 #include "ofAppGLFWWindow.h"
+#include "subView.hpp"
 
 
 //========================================================================
@@ -11,6 +12,7 @@ int main( ){
 	// can be OF_WINDOW or OF_FULLSCREEN
 	// pass in width and height too:
 	ofRunApp(new ofApp());
+    ofRunApp(new subView());
 
     ofGLFWWindowSettings settings;
     
@@ -21,11 +23,19 @@ int main( ){
     settings.windowMode = OF_WINDOW;
     settings.resizable = true;
     shared_ptr<ofAppBaseWindow> mainWindow = ofCreateWindow(settings);
+
+    settings.width = 520;
+    settings.height = 325;
+    settings.setPosition(ofVec2f(560, 0));
+    settings.decorated = false;
+    settings.windowMode = OF_WINDOW;
+    settings.resizable = true;
+    shared_ptr<ofAppBaseWindow> subWindow = ofCreateWindow(settings);
+
     
     settings.width = 300;
     settings.height = 700;
-    settings.setPosition(ofVec2f(0,0));
-    settings.setPosition(ofVec2f(600, 0));
+    settings.setPosition(ofVec2f(1100, 0));
     settings.decorated = true;
     settings.windowMode = OF_WINDOW;
     settings.resizable = true;
@@ -38,7 +48,12 @@ int main( ){
     mainApp->GM.setupGui();
     ofAddListener(guiWindow->events().draw,mainApp.get(),&ofApp::drawGui);
 
+    shared_ptr<subView> subApp(new subView);
+    subApp->GM.setupGui();
+    ofAddListener(guiWindow->events().draw,subApp.get(),&subView::drawGui);
+
     ofRunApp(mainWindow, mainApp);
+    ofRunApp(subWindow, subApp);
     ofRunMainLoop();
 
 }

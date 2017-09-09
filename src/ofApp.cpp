@@ -62,7 +62,13 @@ void ofApp::keyPressed(int key){
         SM.nextScene();
     }
 
+    if (key == OF_KEY_LEFT){
+        SM.previousScene();
+    }
+
 }
+
+
 
 
 //--------------------------------------------------------------
