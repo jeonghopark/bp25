@@ -9,6 +9,8 @@
 
 #include "houseBlackCover.hpp"
 
+
+#include "blankScene.hpp"
 #include "basicLineDrawing.hpp"
 #include "shaderBasic.hpp"
 #include "shaderVertical.hpp"

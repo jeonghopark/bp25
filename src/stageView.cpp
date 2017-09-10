@@ -27,6 +27,7 @@ void stageView::setup(){
     
     ofBackground(0);
     
+    SM.scenes.push_back( new blankScene() );
     SM.scenes.push_back( new shaderPlasma() );
     SM.scenes.push_back( new shaderCircleNoise() );
     SM.setup();

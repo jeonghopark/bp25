@@ -17,6 +17,7 @@ void ofApp::setup(){
     
     ofBackground(0);
     
+    SM.scenes.push_back( new blankScene() );
     SM.scenes.push_back( new basicLineDrawing() );
     SM.scenes.push_back( new shaderBasic() );
     SM.scenes.push_back( new shaderVertical() );
@@ -59,8 +60,9 @@ void ofApp::update(){
 void ofApp::draw(){
     
     SM.draw();
-    
-    HouseBlackCover.draw();
+    if( SM.currentScene != 0 ) {
+        HouseBlackCover.draw();
+    }
     
 }
 

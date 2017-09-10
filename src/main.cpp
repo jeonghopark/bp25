@@ -18,7 +18,7 @@ int main( ){
     
     settings.width = 550;       // 625  / 550
     settings.height = 880;      // 1000 / 880
-    settings.setPosition(ofVec2f(0, 0));
+    settings.setPosition(ofVec2f(10, 10));
     settings.decorated = false;
     settings.windowMode = OF_WINDOW;
     settings.resizable = true;
@@ -26,7 +26,7 @@ int main( ){
 
     settings.width = 520;
     settings.height = 325;
-    settings.setPosition(ofVec2f(560, 0));
+    settings.setPosition(ofVec2f(570, 10));
     settings.decorated = false;
     settings.windowMode = OF_WINDOW;
     settings.resizable = true;
@@ -34,7 +34,7 @@ int main( ){
     
     settings.width = 300;
     settings.height = 700;
-    settings.setPosition(ofVec2f(1100, 0));
+    settings.setPosition(ofVec2f(1100, 10));
     settings.decorated = true;
     settings.windowMode = OF_WINDOW;
     settings.resizable = true;

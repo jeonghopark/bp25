@@ -17,6 +17,7 @@
 #include "guiManager.hpp"
 #include "baseScene.hpp"
 
+#include "blankScene.hpp"
 #include "shaderPlasma.hpp"
 #include "shaderCircleNoise.hpp"
 
