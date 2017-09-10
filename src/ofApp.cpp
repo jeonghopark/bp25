@@ -21,7 +21,18 @@ void ofApp::setup(){
     SM.scenes.push_back( new shaderBasic() );
     SM.scenes.push_back( new shaderVertical() );
     SM.scenes.push_back( new shaderLine() );
-    SM.scenes.push_back( new shaderShape() );
+    SM.scenes.push_back( new shaderSun() );
+    SM.scenes.push_back( new shaderHotShower() );
+    SM.scenes.push_back( new shaderCrystal() );
+    SM.scenes.push_back( new shaderOil() );
+    SM.scenes.push_back( new shaderPilament() );
+    SM.scenes.push_back( new shaderNoiseBlur() );
+    SM.scenes.push_back( new shaderWater() );
+    SM.scenes.push_back( new shaderCircleNoise() );
+    SM.scenes.push_back( new shaderPlasma() );
+    SM.scenes.push_back( new shaderStar() );
+    SM.scenes.push_back( new shaderWhitehole() );
+    SM.scenes.push_back( new shaderJupiter() );
     SM.setup();
     
     for (int i = 0; i < SM.scenes.size(); i++){
@@ -80,8 +91,6 @@ void ofApp::keyPressed(int key){
 void ofApp::keyReleased(int key){
     
 }
-
-
 
 //--------------------------------------------------------------
 void ofApp::mouseMoved(int x, int y ){

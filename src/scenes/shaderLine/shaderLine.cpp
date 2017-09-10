@@ -11,7 +11,7 @@
 //--------------------------------------------------------------
 void shaderLine::setup(){
 
-	shaderNoise.load("", "shader/shader.frag");
+	shaderNoise.load("", "shader/shaderNoise.frag");
 
 
 	svg.load("fassade_apotheke_10x16.svg");

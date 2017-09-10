@@ -13,15 +13,13 @@
 void houseBlackCover::setup(){
     
     houseImage.load("fassade_apotheke_alpha.png");
-    
-    
+        
     houseScaleRatio = 0.45;
     
     imageRatio.cWidth = houseImage.getWidth() * houseScaleRatio;
     imageRatio.cHeight = houseImage.getHeight() * houseScaleRatio;
     imageRatio.xOffSet = (ofGetWidth() - imageRatio.cWidth) * 0.5;
     imageRatio.yOffSet = (ofGetHeight() - imageRatio.cHeight) * 0.5;
-
 
 }
 
@@ -30,14 +28,12 @@ void houseBlackCover::setup(){
 //--------------------------------------------------------------
 void houseBlackCover::update(){
     
-    
 }
 
 
 
 //--------------------------------------------------------------
 void houseBlackCover::draw(){
-
 
     ofPushStyle();
     ofPushMatrix();

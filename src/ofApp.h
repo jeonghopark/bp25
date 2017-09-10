@@ -13,8 +13,18 @@
 #include "shaderBasic.hpp"
 #include "shaderVertical.hpp"
 #include "shaderLine.hpp"
-#include "shaderShape.hpp"
-
+#include "shaderSun.hpp"
+#include "shaderHotShower.hpp"
+#include "shaderCrystal.hpp"
+#include "shaderOil.hpp"
+#include "shaderPilament.hpp"
+#include "shaderNoiseBlur.hpp"
+#include "shaderWater.hpp"
+#include "shaderCircleNoise.hpp"
+#include "shaderPlasma.hpp"
+#include "shaderStar.hpp"
+#include "shaderWhitehole.hpp"
+#include "shaderJupiter.hpp"
 
 
 class ofApp : public ofBaseApp{

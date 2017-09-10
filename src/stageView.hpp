@@ -17,6 +17,9 @@
 #include "guiManager.hpp"
 #include "baseScene.hpp"
 
+#include "shaderPlasma.hpp"
+#include "shaderCircleNoise.hpp"
+
 
 class stageView : public ofBaseApp{
     
@@ -26,10 +29,11 @@ public:
     void update();
     void draw();
     void drawGui(ofEventArgs & args);
+    void keyPressed(int key);
 
     guiManager GM;
     
-    float _testMoving_;
+    sceneManager SM;
     
 };
 

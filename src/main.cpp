@@ -31,7 +31,6 @@ int main( ){
     settings.windowMode = OF_WINDOW;
     settings.resizable = true;
     shared_ptr<ofAppBaseWindow> subWindow = ofCreateWindow(settings);
-
     
     settings.width = 300;
     settings.height = 700;

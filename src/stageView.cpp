@@ -10,6 +10,7 @@
 
 //--------------------------------------------------------------
 void stageView::setupGui(){
+    
     GM.setup();
 }
 
@@ -24,10 +25,16 @@ void stageView::drawGui(ofEventArgs & args){
 //--------------------------------------------------------------
 void stageView::setup(){
     
-    ofBackground(120, 0, 0);
+    ofBackground(0);
     
-    _testMoving_ = 0;
+    SM.scenes.push_back( new shaderPlasma() );
+    SM.scenes.push_back( new shaderCircleNoise() );
+    SM.setup();
     
+    for (int i = 0; i < SM.scenes.size(); i++){
+        SM.scenes[i]->GM = &GM;
+    }
+
 }
 
 
@@ -35,8 +42,9 @@ void stageView::setup(){
 //--------------------------------------------------------------
 void stageView::update(){
     
-    _testMoving_ += 5;
-    
+    SM.update();
+    GM.update();
+
 }
 
 
@@ -44,7 +52,26 @@ void stageView::update(){
 //--------------------------------------------------------------
 void stageView::draw(){
     
-    ofSetColor(255);
-    ofDrawRectangle( sin(ofDegToRad(_testMoving_)) * 200 + ofGetWidth() * 0.5, ofGetHeight() * 0.5, 20, 20);
+    SM.draw();
+        
+}
+
+
+
+//--------------------------------------------------------------
+void stageView::keyPressed(int key){
+    
+    if (key == OF_KEY_RIGHT){
+        SM.nextScene();
+    }
+    
+    if (key == OF_KEY_LEFT){
+        SM.previousScene();
+    }
+    
+    if (key == OF_KEY_UP){
+        SM.updateShader();
+    }
     
 }
+

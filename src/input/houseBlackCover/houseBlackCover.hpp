@@ -14,8 +14,7 @@
 
 
 class houseBlackCover {
-  
-    
+      
     struct ImageRatio{
         float cWidth;
         float cHeight;
@@ -32,17 +31,12 @@ public:
     void update();
     void draw();
     
-    
     ofImage houseImage;
     
     float houseScaleRatio;
     
     ImageRatio imageRatio;
-
-    
     
 };
-
-
 
 #endif /* houseBlackCover_hpp */

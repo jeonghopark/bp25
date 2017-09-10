@@ -25,7 +25,7 @@ public:
     void updateShader();
     
     
-    ofShader shaderNoise;
+    ofShader shaderSun;
         
 };
 
