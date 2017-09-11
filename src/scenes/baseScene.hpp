@@ -21,8 +21,16 @@ public:
     virtual void draw(){};
     
     virtual void updateShader(){};
+    virtual string setName(){ return "0"; };
 
     guiManager * GM;
+    
+    void updateName() { GM->sceneName = setName(); };
+    
+    ofShader shader;
+    ofFile shaderFile;
+
+
 };
 
 

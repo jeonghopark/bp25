@@ -1,9 +1,9 @@
 // Author @patriciogv - 2015
 // http://patriciogonzalezvivo.com
 
-#ifdef GL_ES
-precision mediump float;
-#endif
+#version 150
+
+out vec4 outputColor;
 
 uniform vec2 u_resolution;
 uniform vec2 u_mouse;
@@ -97,5 +97,5 @@ void main() {
                 vec3(0.666667, 1, 1),
                 clamp(length(r.x),0.0,1.0));
     
-    gl_FragColor = vec4((f+.6*f*f+.1*f)*color,1.);
+    outputColor = vec4((f+.6*f*f+.1*f)*color,1.);
 }

@@ -22,7 +22,7 @@ public:
     void draw();
     void updateShader();
     
-    ofShader shaderVertical;
+    string setName();
     
 };
 

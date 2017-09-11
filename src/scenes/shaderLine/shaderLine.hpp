@@ -44,12 +44,12 @@ public:
     void drawBackBaseLineRepeat(vector<ofPolyline> & outlines, int layerNum = 1);
 
     
-    ofShader shaderNoise;
-
     float houseScaleRatio;
 
     ofImage houseImage;
     ImageRatio imageRatio;
+    
+    string setName();
 	
 };
 

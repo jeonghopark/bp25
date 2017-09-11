@@ -11,8 +11,8 @@
 //--------------------------------------------------------------
 void shaderBasic::setup(){
     
-    shaderNoise.load("", "shader/shaderNoise.frag");
-
+    shaderFile.open("shader/shaderNoise.frag");
+    shader.load("shader/shaderNoise.vert", "shader/shaderNoise.frag");
 
 }
 
@@ -21,6 +21,7 @@ void shaderBasic::setup(){
 //--------------------------------------------------------------
 void shaderBasic::update(){
     
+    updateName();
     
 }
 
@@ -30,11 +31,11 @@ void shaderBasic::update(){
 //--------------------------------------------------------------
 void shaderBasic::draw(){
     
-    shaderNoise.begin();
-    shaderNoise.setUniform1f("u_time", ofGetElapsedTimef());
-    shaderNoise.setUniform2f("u_resolution", ofGetWidth(), ofGetHeight());
+    shader.begin();
+    shader.setUniform1f("u_time", ofGetElapsedTimef());
+    shader.setUniform2f("u_resolution", ofGetWidth(), ofGetHeight());
     ofDrawRectangle(0,0,ofGetWidth(), ofGetHeight());
-    shaderNoise.end();
+    shader.end();
     
 }
 
@@ -43,5 +44,16 @@ void shaderBasic::draw(){
 
 //--------------------------------------------------------------
 void shaderBasic::updateShader(){
-    shaderNoise.load("", "shader/shaderNoise.frag");
+
+    shaderFile.open("shader/shaderNoise.frag");
+    shader.load("shader/shaderNoise.vert", "shader/shaderNoise.frag");
+
+}
+
+
+//--------------------------------------------------------------
+string shaderBasic::setName(){
+
+    return shaderFile.getBaseName();
+
 }

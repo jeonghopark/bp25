@@ -22,6 +22,7 @@ void sceneManager::setup(){
 void sceneManager::update(){
     
     scenes[currentScene]->update();
+//    scenes[currentScene]->GM->sceneName = scenes[currentScene]->setName();
         
 }
 

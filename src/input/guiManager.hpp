@@ -33,6 +33,7 @@ public:
     
     ofParameterGroup mainGui;
     ofParameter<string> frameRate;
+    ofParameter<string> sceneName;
     
     ofxPanel main;
     ofxPanel panel;

@@ -48,6 +48,7 @@ public:
     ofImage houseImage;
     ImageRatio imageRatio;
 
+    string setName();
     
 };
 

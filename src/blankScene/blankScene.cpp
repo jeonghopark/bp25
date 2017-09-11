@@ -22,7 +22,7 @@ void blankScene::setup(){
 
 //--------------------------------------------------------------
 void blankScene::update(){
-    
+    updateName();
 }
 
 
@@ -33,6 +33,14 @@ void blankScene::draw(){
     float _x = (ofGetWidth() - imgWidth) * 0.5;
     float _y = (ofGetHeight() - imgHeight) * 0.5;
     bpLogo.draw(_x, _y, imgWidth, imgHeight);
+    
+}
+
+
+//--------------------------------------------------------------
+string blankScene::setName(){
+    
+    return "Binary Patina";
     
 }
 

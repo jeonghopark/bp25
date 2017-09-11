@@ -1,14 +1,12 @@
 #pragma once
 
 #include "ofMain.h"
-//#include "ofxGui.h"
 
 #include "sceneManager.hpp"
 #include "guiManager.hpp"
 #include "baseScene.hpp"
 
 #include "houseBlackCover.hpp"
-
 
 #include "blankScene.hpp"
 #include "basicLineDrawing.hpp"

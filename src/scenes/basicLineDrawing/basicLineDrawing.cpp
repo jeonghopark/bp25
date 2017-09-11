@@ -42,7 +42,8 @@ void basicLineDrawing::setup(){
 //--------------------------------------------------------------
 void basicLineDrawing::update(){
     
-    
+    updateName();
+
     if (GM->motion) {
         if (step > 0.99) {
             speedDirect = -0.01;
@@ -55,7 +56,6 @@ void basicLineDrawing::update(){
         step = 0;
         speedDirect = 0.01;
     }
-    
     
     
 }
@@ -148,7 +148,7 @@ void basicLineDrawing::drawBackBaseLine(vector<ofPolyline> & outlines){
         }
         ofEndShape();
         ofPopStyle();
-        
+      
     }
     
 }
@@ -177,3 +177,14 @@ void basicLineDrawing::drawBackBaseLineRepeat(vector<ofPolyline> & outlines, int
     }
     
 }
+
+
+
+//--------------------------------------------------------------
+string basicLineDrawing::setName(){
+    
+    return "basicLineDrawing";
+    
+}
+
+

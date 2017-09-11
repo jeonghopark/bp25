@@ -22,6 +22,8 @@ class blankScene : public baseScene {
     
     float imgWidth, imgHeight;
     
+    string setName();
+    
 };
 
 

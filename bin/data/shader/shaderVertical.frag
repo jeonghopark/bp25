@@ -1,8 +1,9 @@
-#ifdef GL_ES
-precision mediump float;
-#endif
+// fragment shader
 
-#extension GL_OES_standard_derivatives : enable
+#version 150
+
+out vec4 outputColor;
+
 
 uniform float u_time;
 uniform vec2 u_mouse;
@@ -44,5 +45,5 @@ void main( void ) {
     float grad = pow((r.y + r.y) * max(.0, uv.x) + .1, 1.0);
     color = ramp(grad);
     color /= (0.10 + max(vec3(1), color));
-    gl_FragColor = vec4(color, 1.0);
+    outputColor = vec4(color, 1.0);
 }

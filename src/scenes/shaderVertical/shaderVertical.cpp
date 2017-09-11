@@ -11,7 +11,8 @@
 //--------------------------------------------------------------
 void shaderVertical::setup(){
     
-    shaderVertical.load("", "shader/shaderVertical.frag");
+    shaderFile.open("shader/shaderVertical.frag");
+    shader.load("shader/shaderVertical.vert", shaderFile);
     
 }
 
@@ -20,6 +21,8 @@ void shaderVertical::setup(){
 //--------------------------------------------------------------
 void shaderVertical::update(){
     
+    updateName();
+    
 }
 
 
@@ -27,11 +30,11 @@ void shaderVertical::update(){
 //--------------------------------------------------------------
 void shaderVertical::draw(){
     
-    shaderVertical.begin();
-    shaderVertical.setUniform1f("u_time", ofGetElapsedTimef());
-    shaderVertical.setUniform2f("u_resolution", ofGetWidth(), ofGetHeight());
+    shader.begin();
+    shader.setUniform1f("u_time", ofGetElapsedTimef());
+    shader.setUniform2f("u_resolution", ofGetWidth(), ofGetHeight());
     ofDrawRectangle(0,0,ofGetWidth(), ofGetHeight());
-    shaderVertical.end();
+    shader.end();
 
 
 }
@@ -39,7 +42,18 @@ void shaderVertical::draw(){
 
 //--------------------------------------------------------------
 void shaderVertical::updateShader(){
-    shaderVertical.load("", "shader/shaderVertical.frag");
+
+    shaderFile.open("shader/shaderVertical.frag");
+    shader.load("shader/shaderVertical.vert", shaderFile);
+
+}
+
+
+//--------------------------------------------------------------
+string shaderVertical::setName(){
+    
+    return shaderFile.getBaseName();
+    
 }
 
 

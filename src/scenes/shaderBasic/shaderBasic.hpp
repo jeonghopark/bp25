@@ -24,9 +24,7 @@ public:
     void draw();
     void updateShader();
 
-    
-    ofShader shaderNoise;
-    
+    string setName();
     
 };
 
