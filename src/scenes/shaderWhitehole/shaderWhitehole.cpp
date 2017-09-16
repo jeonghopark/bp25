@@ -1,24 +1,26 @@
 //
-//  shaderVertical.cpp
+//  shaderWhitehole.cpp
 //  bp_25
 //
-//  Created by JeongHo Park on 09.09.17.
+//  Created by JeongHo Park on 10.09.17.
 //
 
-#include "shaderVertical.hpp"
+#include "shaderWhitehole.hpp"
+
+
 
 
 //--------------------------------------------------------------
-void shaderVertical::setup(){
+void shaderWhitehole::setup(){
     
     loadShader();
-    
+        
 }
 
 
 
 //--------------------------------------------------------------
-void shaderVertical::update(){
+void shaderWhitehole::update(){
     
     updateName();
     
@@ -26,7 +28,7 @@ void shaderVertical::update(){
 
 
 //--------------------------------------------------------------
-void shaderVertical::updateShader(){
+void shaderWhitehole::updateShader(){
     
     shaderFbo.begin();
     ofClear(0, 0, 0, 0);
@@ -50,33 +52,32 @@ void shaderVertical::updateShader(){
     shader.end();
     shaderFbo.end();
     
-}
+};
 
 
 
 //--------------------------------------------------------------
-void shaderVertical::draw(){
+void shaderWhitehole::draw(){
     
     drawGlitch();
-
-
-}
-
-
-//--------------------------------------------------------------
-void shaderVertical::loadShader(){
-
-    shaderFile.open("shader/shaderVertical.frag");
-    shader.load("shader/shaderVertical.vert", shaderFile);
-
-}
-
-
-//--------------------------------------------------------------
-string shaderVertical::setName(){
     
+    
+}
+
+
+//--------------------------------------------------------------
+void shaderWhitehole::loadShader(){
+    
+    shaderFile.open("shader/shaderWhitehole.frag");
+    shader.load("shader/shaderWhitehole.vert", shaderFile);
+
+}
+
+
+//--------------------------------------------------------------
+string shaderWhitehole::setName(){
+
     return shaderFile.getBaseName();
-    
-}
 
+}
 

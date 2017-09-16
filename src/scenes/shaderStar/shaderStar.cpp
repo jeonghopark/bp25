@@ -1,15 +1,16 @@
 //
-//  shaderVertical.cpp
+//  shaderStar.cpp
 //  bp_25
 //
-//  Created by JeongHo Park on 09.09.17.
+//  Created by JeongHo Park on 10.09.17.
 //
 
-#include "shaderVertical.hpp"
+#include "shaderStar.hpp"
+
 
 
 //--------------------------------------------------------------
-void shaderVertical::setup(){
+void shaderStar::setup(){
     
     loadShader();
     
@@ -18,15 +19,13 @@ void shaderVertical::setup(){
 
 
 //--------------------------------------------------------------
-void shaderVertical::update(){
-    
+void shaderStar::update(){
     updateName();
-    
 }
 
 
 //--------------------------------------------------------------
-void shaderVertical::updateShader(){
+void shaderStar::updateShader(){
     
     shaderFbo.begin();
     ofClear(0, 0, 0, 0);
@@ -50,33 +49,31 @@ void shaderVertical::updateShader(){
     shader.end();
     shaderFbo.end();
     
-}
+};
+
 
 
 
 //--------------------------------------------------------------
-void shaderVertical::draw(){
+void shaderStar::draw(){
     
     drawGlitch();
-
-
+    
+    
 }
 
 
 //--------------------------------------------------------------
-void shaderVertical::loadShader(){
-
-    shaderFile.open("shader/shaderVertical.frag");
-    shader.load("shader/shaderVertical.vert", shaderFile);
-
+void shaderStar::loadShader(){
+    shaderFile.open("shader/shaderStar.frag");
+    shader.load("shader/shaderStar.vert", shaderFile);
 }
 
 
+
 //--------------------------------------------------------------
-string shaderVertical::setName(){
+string shaderStar::setName(){
     
     return shaderFile.getBaseName();
     
 }
-
-

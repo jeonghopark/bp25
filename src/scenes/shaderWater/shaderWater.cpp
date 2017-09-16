@@ -1,15 +1,16 @@
 //
-//  shaderVertical.cpp
+//  shaderWater.cpp
 //  bp_25
 //
-//  Created by JeongHo Park on 09.09.17.
+//  Created by JeongHo Park on 10.09.17.
 //
 
-#include "shaderVertical.hpp"
+#include "shaderWater.hpp"
+
 
 
 //--------------------------------------------------------------
-void shaderVertical::setup(){
+void shaderWater::setup(){
     
     loadShader();
     
@@ -18,15 +19,13 @@ void shaderVertical::setup(){
 
 
 //--------------------------------------------------------------
-void shaderVertical::update(){
-    
+void shaderWater::update(){
     updateName();
-    
 }
 
 
 //--------------------------------------------------------------
-void shaderVertical::updateShader(){
+void shaderWater::updateShader(){
     
     shaderFbo.begin();
     ofClear(0, 0, 0, 0);
@@ -50,30 +49,29 @@ void shaderVertical::updateShader(){
     shader.end();
     shaderFbo.end();
     
-}
+};
 
 
 
 //--------------------------------------------------------------
-void shaderVertical::draw(){
+void shaderWater::draw(){
     
     drawGlitch();
-
-
+    
+    
 }
 
 
 //--------------------------------------------------------------
-void shaderVertical::loadShader(){
-
-    shaderFile.open("shader/shaderVertical.frag");
-    shader.load("shader/shaderVertical.vert", shaderFile);
-
+void shaderWater::loadShader(){
+    shaderFile.open("shader/shaderWater.frag");
+    shader.load("shader/shaderWater.vert", shaderFile);
 }
 
 
+
 //--------------------------------------------------------------
-string shaderVertical::setName(){
+string shaderWater::setName(){
     
     return shaderFile.getBaseName();
     

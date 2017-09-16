@@ -31,12 +31,15 @@ public:
 	void setup();
 	void update();
 	void draw();
+    void loadShader();
     void updateShader();
 
     ofxSVG svg;
     float step;
     float speedDirect;
     vector<ofPolyline> outlines;
+    
+    void drawLineInShader();
     
     void drawBaseLine(vector<ofPolyline> & outlines);
     void drawBaseVerticalLine(vector<ofPolyline> & outlines);

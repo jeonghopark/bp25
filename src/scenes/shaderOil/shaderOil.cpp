@@ -1,15 +1,15 @@
 //
-//  shaderVertical.cpp
+//  shaderOil.cpp
 //  bp_25
 //
-//  Created by JeongHo Park on 09.09.17.
+//  Created by JeongHo Park on 10.09.17.
 //
 
-#include "shaderVertical.hpp"
+#include "shaderOil.hpp"
 
 
 //--------------------------------------------------------------
-void shaderVertical::setup(){
+void shaderOil::setup(){
     
     loadShader();
     
@@ -18,15 +18,16 @@ void shaderVertical::setup(){
 
 
 //--------------------------------------------------------------
-void shaderVertical::update(){
-    
+void shaderOil::update(){
+ 
     updateName();
     
 }
 
 
+
 //--------------------------------------------------------------
-void shaderVertical::updateShader(){
+void shaderOil::updateShader(){
     
     shaderFbo.begin();
     ofClear(0, 0, 0, 0);
@@ -50,33 +51,31 @@ void shaderVertical::updateShader(){
     shader.end();
     shaderFbo.end();
     
-}
+};
 
 
 
 //--------------------------------------------------------------
-void shaderVertical::draw(){
+void shaderOil::draw(){
     
     drawGlitch();
+    
+}
 
+
+//--------------------------------------------------------------
+void shaderOil::loadShader(){
+
+    shaderFile.open("shader/shaderOil.frag");
+    shader.load("shader/shaderOil.vert", shaderFile);
 
 }
 
 
 //--------------------------------------------------------------
-void shaderVertical::loadShader(){
-
-    shaderFile.open("shader/shaderVertical.frag");
-    shader.load("shader/shaderVertical.vert", shaderFile);
-
-}
-
-
-//--------------------------------------------------------------
-string shaderVertical::setName(){
+string shaderOil::setName(){
     
     return shaderFile.getBaseName();
     
 }
-
 

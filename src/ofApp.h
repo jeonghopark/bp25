@@ -10,7 +10,7 @@
 
 #include "blankScene.hpp"
 #include "basicLineDrawing.hpp"
-#include "shaderBasic.hpp"
+#include "shaderNoise.hpp"
 #include "shaderVertical.hpp"
 #include "shaderLine.hpp"
 #include "shaderSun.hpp"
@@ -25,6 +25,8 @@
 #include "shaderStar.hpp"
 #include "shaderWhitehole.hpp"
 #include "shaderJupiter.hpp"
+#include "shaderDiffusion.hpp"
+#include "shaderTest.hpp"
 
 
 class ofApp : public ofBaseApp{

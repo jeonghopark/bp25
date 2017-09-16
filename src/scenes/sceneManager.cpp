@@ -12,6 +12,7 @@ void sceneManager::setup(){
     
     for(auto scene: scenes) {
         scene->setup();
+        scene->setupGlitch();
     }
     
     currentScene = 0;
@@ -22,8 +23,8 @@ void sceneManager::setup(){
 void sceneManager::update(){
     
     scenes[currentScene]->update();
-//    scenes[currentScene]->GM->sceneName = scenes[currentScene]->setName();
-        
+    scenes[currentScene]->updateShader();
+
 }
 
 
@@ -59,12 +60,28 @@ void sceneManager::previousScene(){
 
 
 //--------------------------------------------------------------
-void sceneManager::updateShader(){
+void sceneManager::loadShader(){
     
-    scenes[currentScene]->updateShader();
+    scenes[currentScene]->loadShader();
     
 }
 
+
+//--------------------------------------------------------------
+void sceneManager::glitchOn(int key){
+    
+    scenes[currentScene]->glitchOn(key);
+    
+}
+
+
+
+//--------------------------------------------------------------
+void sceneManager::glitchOff(int key){
+    
+    scenes[currentScene]->glitchOff(key);
+    
+}
 
 
 

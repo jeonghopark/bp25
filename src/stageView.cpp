@@ -71,8 +71,20 @@ void stageView::keyPressed(int key){
     }
     
     if (key == OF_KEY_UP){
-        SM.updateShader();
+        SM.loadShader();
     }
     
+    SM.glitchOn(key);
+
 }
+
+
+//--------------------------------------------------------------
+void stageView::keyReleased(int key){
+    
+    SM.glitchOff(key);
+    
+}
+
+
 

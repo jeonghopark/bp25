@@ -1,15 +1,17 @@
 //
-//  shaderVertical.cpp
+//  shaderPlasma.cpp
 //  bp_25
 //
-//  Created by JeongHo Park on 09.09.17.
+//  Created by JeongHo Park on 10.09.17.
 //
 
-#include "shaderVertical.hpp"
+#include "shaderPlasma.hpp"
+
+
 
 
 //--------------------------------------------------------------
-void shaderVertical::setup(){
+void shaderPlasma::setup(){
     
     loadShader();
     
@@ -18,15 +20,14 @@ void shaderVertical::setup(){
 
 
 //--------------------------------------------------------------
-void shaderVertical::update(){
-    
+void shaderPlasma::update(){
     updateName();
-    
 }
 
 
+
 //--------------------------------------------------------------
-void shaderVertical::updateShader(){
+void shaderPlasma::updateShader(){
     
     shaderFbo.begin();
     ofClear(0, 0, 0, 0);
@@ -50,33 +51,31 @@ void shaderVertical::updateShader(){
     shader.end();
     shaderFbo.end();
     
-}
+};
 
 
 
 //--------------------------------------------------------------
-void shaderVertical::draw(){
+void shaderPlasma::draw(){
     
     drawGlitch();
-
-
+    
+    
 }
 
 
 //--------------------------------------------------------------
-void shaderVertical::loadShader(){
-
-    shaderFile.open("shader/shaderVertical.frag");
-    shader.load("shader/shaderVertical.vert", shaderFile);
-
+void shaderPlasma::loadShader(){
+    shaderFile.open("shader/shaderPlasma.frag");
+    shader.load("shader/shaderPlasma.vert", shaderFile);
 }
 
 
+
 //--------------------------------------------------------------
-string shaderVertical::setName(){
+string shaderPlasma::setName(){
     
     return shaderFile.getBaseName();
     
 }
-
 

@@ -1,15 +1,15 @@
 //
-//  shaderVertical.cpp
+//  shaderDiffusion.cpp
 //  bp_25
 //
-//  Created by JeongHo Park on 09.09.17.
+//  Created by JeongHo Park on 12.09.17.
 //
 
-#include "shaderVertical.hpp"
+#include "shaderDiffusion.hpp"
 
 
 //--------------------------------------------------------------
-void shaderVertical::setup(){
+void shaderDiffusion::setup(){
     
     loadShader();
     
@@ -18,7 +18,7 @@ void shaderVertical::setup(){
 
 
 //--------------------------------------------------------------
-void shaderVertical::update(){
+void shaderDiffusion::update(){
     
     updateName();
     
@@ -26,7 +26,7 @@ void shaderVertical::update(){
 
 
 //--------------------------------------------------------------
-void shaderVertical::updateShader(){
+void shaderDiffusion::updateShader(){
     
     shaderFbo.begin();
     ofClear(0, 0, 0, 0);
@@ -50,33 +50,32 @@ void shaderVertical::updateShader(){
     shader.end();
     shaderFbo.end();
     
-}
+};
+
 
 
 
 //--------------------------------------------------------------
-void shaderVertical::draw(){
+void shaderDiffusion::draw(){
     
     drawGlitch();
-
-
+    
 }
 
 
 //--------------------------------------------------------------
-void shaderVertical::loadShader(){
-
-    shaderFile.open("shader/shaderVertical.frag");
-    shader.load("shader/shaderVertical.vert", shaderFile);
-
+void shaderDiffusion::loadShader(){
+    
+    shaderFile.open("shader/shaderDiffusion.frag");
+    shader.load("shader/shaderDiffusion.vert", shaderFile);
+    
 }
 
 
 //--------------------------------------------------------------
-string shaderVertical::setName(){
+string shaderDiffusion::setName(){
     
     return shaderFile.getBaseName();
     
 }
-
 

@@ -31,6 +31,7 @@ public:
     void draw();
     void drawGui(ofEventArgs & args);
     void keyPressed(int key);
+    void keyReleased(int key);
 
     guiManager GM;
     

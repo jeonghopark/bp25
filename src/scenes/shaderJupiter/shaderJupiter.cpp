@@ -1,15 +1,17 @@
 //
-//  shaderVertical.cpp
+//  shaderJupiter.cpp
 //  bp_25
 //
-//  Created by JeongHo Park on 09.09.17.
+//  Created by JeongHo Park on 10.09.17.
 //
 
-#include "shaderVertical.hpp"
+#include "shaderJupiter.hpp"
+
+
 
 
 //--------------------------------------------------------------
-void shaderVertical::setup(){
+void shaderJupiter::setup(){
     
     loadShader();
     
@@ -18,15 +20,14 @@ void shaderVertical::setup(){
 
 
 //--------------------------------------------------------------
-void shaderVertical::update(){
-    
+void shaderJupiter::update(){
     updateName();
-    
 }
 
 
+
 //--------------------------------------------------------------
-void shaderVertical::updateShader(){
+void shaderJupiter::updateShader(){
     
     shaderFbo.begin();
     ofClear(0, 0, 0, 0);
@@ -50,33 +51,28 @@ void shaderVertical::updateShader(){
     shader.end();
     shaderFbo.end();
     
-}
-
+};
 
 
 //--------------------------------------------------------------
-void shaderVertical::draw(){
+void shaderJupiter::draw(){
     
     drawGlitch();
-
-
+        
 }
 
 
 //--------------------------------------------------------------
-void shaderVertical::loadShader(){
-
-    shaderFile.open("shader/shaderVertical.frag");
-    shader.load("shader/shaderVertical.vert", shaderFile);
-
+void shaderJupiter::loadShader(){
+    shaderFile.open("shader/shaderJupiter.frag");
+    shader.load("shader/shaderJupiter.vert", shaderFile);
 }
 
 
 //--------------------------------------------------------------
-string shaderVertical::setName(){
+string shaderJupiter::setName(){
     
     return shaderFile.getBaseName();
     
 }
-
 

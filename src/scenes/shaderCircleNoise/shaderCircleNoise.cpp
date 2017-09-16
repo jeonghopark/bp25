@@ -1,15 +1,18 @@
 //
-//  shaderVertical.cpp
+//  shaderCircleNoise.cpp
 //  bp_25
 //
-//  Created by JeongHo Park on 09.09.17.
+//  Created by JeongHo Park on 10.09.17.
 //
 
-#include "shaderVertical.hpp"
+#include "shaderCircleNoise.hpp"
+
+
+
 
 
 //--------------------------------------------------------------
-void shaderVertical::setup(){
+void shaderCircleNoise::setup(){
     
     loadShader();
     
@@ -18,15 +21,16 @@ void shaderVertical::setup(){
 
 
 //--------------------------------------------------------------
-void shaderVertical::update(){
-    
-    updateName();
-    
+void shaderCircleNoise::update(){
+ 
+	updateName();
+
 }
 
 
+
 //--------------------------------------------------------------
-void shaderVertical::updateShader(){
+void shaderCircleNoise::updateShader(){
     
     shaderFbo.begin();
     ofClear(0, 0, 0, 0);
@@ -50,33 +54,30 @@ void shaderVertical::updateShader(){
     shader.end();
     shaderFbo.end();
     
-}
+};
 
 
 
 //--------------------------------------------------------------
-void shaderVertical::draw(){
+void shaderCircleNoise::draw(){
     
     drawGlitch();
-
-
-}
-
-
-//--------------------------------------------------------------
-void shaderVertical::loadShader(){
-
-    shaderFile.open("shader/shaderVertical.frag");
-    shader.load("shader/shaderVertical.vert", shaderFile);
-
-}
-
-
-//--------------------------------------------------------------
-string shaderVertical::setName(){
     
+}
+
+
+//--------------------------------------------------------------
+void shaderCircleNoise::loadShader(){
+
+    shaderFile.open("shader/shaderCircleNoise.frag");
+    shader.load("shader/shaderCircleNoise.vert", shaderFile);
+
+}
+
+//--------------------------------------------------------------
+string shaderCircleNoise::setName(){
+
     return shaderFile.getBaseName();
-    
-}
 
+}
 

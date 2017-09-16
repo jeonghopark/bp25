@@ -17,9 +17,10 @@ void ofApp::setup(){
     
     ofBackground(0);
     
+    
     SM.scenes.push_back( new blankScene() );
     SM.scenes.push_back( new basicLineDrawing() );
-    SM.scenes.push_back( new shaderBasic() );
+    SM.scenes.push_back( new shaderNoise() );
     SM.scenes.push_back( new shaderVertical() );
     SM.scenes.push_back( new shaderLine() );
     SM.scenes.push_back( new shaderSun() );
@@ -31,9 +32,11 @@ void ofApp::setup(){
     SM.scenes.push_back( new shaderWater() );
     SM.scenes.push_back( new shaderCircleNoise() );
     SM.scenes.push_back( new shaderPlasma() );
-    SM.scenes.push_back( new shaderStar() );
+//    SM.scenes.push_back( new shaderStar() );
     SM.scenes.push_back( new shaderWhitehole() );
     SM.scenes.push_back( new shaderJupiter() );
+    SM.scenes.push_back( new shaderDiffusion() );
+    SM.scenes.push_back( new shaderTest() );
     SM.setup();
     
     for (int i = 0; i < SM.scenes.size(); i++){
@@ -50,6 +53,7 @@ void ofApp::update(){
     
     SM.update();
     GM.update();
+
     
 }
 
@@ -59,12 +63,16 @@ void ofApp::update(){
 //--------------------------------------------------------------
 void ofApp::draw(){
     
+    
     SM.draw();
+
+    ofPushStyle();
+    ofEnableAlphaBlending();
     if( SM.currentScene != 0 ) {
         HouseBlackCover.draw();
     }
-    
-    
+    ofDisableAlphaBlending();
+    ofPopStyle();
     
 }
 
@@ -83,9 +91,11 @@ void ofApp::keyPressed(int key){
     }
 
     if (key == OF_KEY_UP){
-        SM.updateShader();
+        SM.loadShader();
     }
 
+    SM.glitchOn(key);
+    
 }
 
 
@@ -94,6 +104,8 @@ void ofApp::keyPressed(int key){
 //--------------------------------------------------------------
 void ofApp::keyReleased(int key){
     
+    SM.glitchOff(key);
+
 }
 
 //--------------------------------------------------------------

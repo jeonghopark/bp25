@@ -22,14 +22,19 @@ public:
     void setup();
     void update();
     void draw();
+    
     void nextScene();
     void previousScene();
     
-    void updateShader();
+    void loadShader();
+
     
     vector < baseScene * > scenes;
     int currentScene;
     
+    void glitchOn(int key);
+    void glitchOff(int key);
+
     
 };
 

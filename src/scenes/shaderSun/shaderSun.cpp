@@ -1,32 +1,33 @@
 //
-//  shaderVertical.cpp
+//  shaderSun.cpp
 //  bp_25
 //
-//  Created by JeongHo Park on 09.09.17.
+//  Created by JeongHo Park on 08.09.17.
 //
 
-#include "shaderVertical.hpp"
+#include "shaderSun.hpp"
 
 
 //--------------------------------------------------------------
-void shaderVertical::setup(){
+void shaderSun::setup(){
     
     loadShader();
-    
+        
 }
 
 
 
 //--------------------------------------------------------------
-void shaderVertical::update(){
+void shaderSun::update(){
     
     updateName();
     
 }
 
 
+
 //--------------------------------------------------------------
-void shaderVertical::updateShader(){
+void shaderSun::updateShader(){
     
     shaderFbo.begin();
     ofClear(0, 0, 0, 0);
@@ -50,33 +51,33 @@ void shaderVertical::updateShader(){
     shader.end();
     shaderFbo.end();
     
-}
+};
 
 
 
 //--------------------------------------------------------------
-void shaderVertical::draw(){
+void shaderSun::draw(){
     
     drawGlitch();
+    
+}
 
+
+
+
+//--------------------------------------------------------------
+void shaderSun::loadShader(){
+
+    shaderFile.open("shader/shaderSun.frag");
+    shader.load("shader/shaderSun.vert", shaderFile);
 
 }
 
 
 //--------------------------------------------------------------
-void shaderVertical::loadShader(){
-
-    shaderFile.open("shader/shaderVertical.frag");
-    shader.load("shader/shaderVertical.vert", shaderFile);
-
-}
-
-
-//--------------------------------------------------------------
-string shaderVertical::setName(){
+string shaderSun::setName(){
     
     return shaderFile.getBaseName();
     
 }
-
 

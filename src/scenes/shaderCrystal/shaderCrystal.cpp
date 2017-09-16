@@ -1,15 +1,15 @@
 //
-//  shaderVertical.cpp
+//  shaderCrystal.cpp
 //  bp_25
 //
-//  Created by JeongHo Park on 09.09.17.
+//  Created by JeongHo Park on 10.09.17.
 //
 
-#include "shaderVertical.hpp"
+#include "shaderCrystal.hpp"
 
 
 //--------------------------------------------------------------
-void shaderVertical::setup(){
+void shaderCrystal::setup(){
     
     loadShader();
     
@@ -18,7 +18,7 @@ void shaderVertical::setup(){
 
 
 //--------------------------------------------------------------
-void shaderVertical::update(){
+void shaderCrystal::update(){
     
     updateName();
     
@@ -26,7 +26,7 @@ void shaderVertical::update(){
 
 
 //--------------------------------------------------------------
-void shaderVertical::updateShader(){
+void shaderCrystal::updateShader(){
     
     shaderFbo.begin();
     ofClear(0, 0, 0, 0);
@@ -50,30 +50,29 @@ void shaderVertical::updateShader(){
     shader.end();
     shaderFbo.end();
     
-}
-
-
+};
 
 //--------------------------------------------------------------
-void shaderVertical::draw(){
+void shaderCrystal::draw(){
     
     drawGlitch();
-
-
+    
+    
 }
 
 
 //--------------------------------------------------------------
-void shaderVertical::loadShader(){
+void shaderCrystal::loadShader(){
 
-    shaderFile.open("shader/shaderVertical.frag");
-    shader.load("shader/shaderVertical.vert", shaderFile);
+    shaderFile.open("shader/shaderCrystal.frag");
+    shader.load("shader/shaderCrystal.vert", shaderFile);
 
 }
 
 
+
 //--------------------------------------------------------------
-string shaderVertical::setName(){
+string shaderCrystal::setName(){
     
     return shaderFile.getBaseName();
     

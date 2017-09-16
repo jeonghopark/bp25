@@ -1,22 +1,20 @@
 //
-//  shaderVertical.hpp
+//  shaderWhitehole.hpp
 //  bp_25
 //
-//  Created by JeongHo Park on 09.09.17.
+//  Created by JeongHo Park on 10.09.17.
 //
 #pragma once
 
-#ifndef shaderVertical_hpp
-#define shaderVertical_hpp
+#ifndef shaderWhitehole_hpp
+#define shaderWhitehole_hpp
 
 #include "ofMain.h"
 #include "baseScene.hpp"
 
 
-class shaderVertical : public baseScene{
+class shaderWhitehole : public baseScene{
   
-public:
-    
     void setup();
     void update();
     void draw();
@@ -27,5 +25,4 @@ public:
     
 };
 
-
-#endif /* shaderVertical_hpp */
+#endif /* shaderWhitehole_hpp */

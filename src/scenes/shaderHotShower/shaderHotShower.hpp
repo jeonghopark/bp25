@@ -1,20 +1,21 @@
 //
-//  shaderVertical.hpp
+//  shaderTest.hpp
 //  bp_25
 //
-//  Created by JeongHo Park on 09.09.17.
+//  Created by JeongHo Park on 10.09.17.
 //
 #pragma once
 
-#ifndef shaderVertical_hpp
-#define shaderVertical_hpp
+#ifndef shaderHotShower_hpp
+#define shaderHotShower_hpp
+
 
 #include "ofMain.h"
 #include "baseScene.hpp"
 
 
-class shaderVertical : public baseScene{
-  
+class shaderHotShower : public baseScene {
+
 public:
     
     void setup();
@@ -28,4 +29,6 @@ public:
 };
 
 
-#endif /* shaderVertical_hpp */
+
+
+#endif /* shaderHotShower_hpp */

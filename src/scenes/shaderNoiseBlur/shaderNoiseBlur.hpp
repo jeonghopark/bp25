@@ -1,22 +1,21 @@
 //
-//  shaderVertical.hpp
+//  shaderNoiseBlur.hpp
 //  bp_25
 //
-//  Created by JeongHo Park on 09.09.17.
+//  Created by JeongHo Park on 10.09.17.
 //
 #pragma once
 
-#ifndef shaderVertical_hpp
-#define shaderVertical_hpp
+
+#ifndef shaderNoiseBlur_hpp
+#define shaderNoiseBlur_hpp
 
 #include "ofMain.h"
 #include "baseScene.hpp"
 
 
-class shaderVertical : public baseScene{
+class shaderNoiseBlur : public baseScene{
   
-public:
-    
     void setup();
     void update();
     void draw();
@@ -24,8 +23,8 @@ public:
     void updateShader();
     
     string setName();
+
     
 };
 
-
-#endif /* shaderVertical_hpp */
+#endif /* shaderNoiseBlur_hpp */

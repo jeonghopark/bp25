@@ -11,8 +11,7 @@
 //--------------------------------------------------------------
 void shaderLine::setup(){
 
-    shaderFile.open("shader/shaderLine.frag");
-	shader.load("shader/shaderLine.vert", shaderFile);
+    loadShader();
 
 
 	svg.load("fassade_apotheke_10x16.svg");
@@ -64,30 +63,58 @@ void shaderLine::update(){
 
 
 //--------------------------------------------------------------
-void shaderLine::draw(){
-
-
-
-	ofPushStyle();
-	ofNoFill();
-	ofSetColor(255, 0, 0);
-	ofPushMatrix();
-	ofTranslate(imageRatio.xOffSet, imageRatio.yOffSet);
-
+void shaderLine::updateShader(){
+    
+    shaderFbo.begin();
+    ofClear(0, 0, 0, 0);
     shader.begin();
     shader.setUniform1f("u_time", ofGetElapsedTimef());
     shader.setUniform2f("u_resolution", ofGetWidth(), ofGetHeight());
     
-    drawBaseLine(outlines);
-	drawBaseVerticalLine(outlines);
-	drawBackBaseLine(outlines);
-	drawBackBaseLineRepeat(outlines, 3);
-
+    shader.setUniform1f("u_control01", ofGetElapsedTimef());
+    shader.setUniform1f("u_control02", ofGetElapsedTimef());
+    shader.setUniform1f("u_control03", ofGetElapsedTimef());
+    shader.setUniform1f("u_control04", ofGetElapsedTimef());
+    shader.setUniform1f("u_control05", ofGetElapsedTimef());
+    shader.setUniform1f("u_control06", ofGetElapsedTimef());
+    shader.setUniform1f("u_control07", ofGetElapsedTimef());
+    shader.setUniform1f("u_control08", ofGetElapsedTimef());
+    shader.setUniform1f("u_control09", ofGetElapsedTimef());
+    shader.setUniform1f("u_control10", ofGetElapsedTimef());
+    
+    //    ofDrawRectangle(0,0,ofGetWidth(), ofGetHeight());
+    
+    drawLineInShader();
+    
     shader.end();
+    shaderFbo.end();
+    
+};
 
-	ofPopMatrix();
-	ofPopStyle();
 
+
+//--------------------------------------------------------------
+void shaderLine::draw(){
+
+    drawGlitch();
+    
+}
+
+
+//--------------------------------------------------------------
+void shaderLine::drawLineInShader(){
+    
+    ofPushMatrix();
+    ofTranslate(imageRatio.xOffSet, imageRatio.yOffSet);
+    
+    ofNoFill();
+    drawBaseLine(outlines);
+    drawBaseVerticalLine(outlines);
+    drawBackBaseLine(outlines);
+    drawBackBaseLineRepeat(outlines, 3);
+    
+    ofPopMatrix();
+    
 }
 
 
@@ -196,7 +223,7 @@ string shaderLine::setName(){
 
 
 //--------------------------------------------------------------
-void shaderLine::updateShader(){
+void shaderLine::loadShader(){
     shaderFile.open("shader/shaderLine.frag");
     shader.load("shader/shaderLine.vert", shaderFile);
 }

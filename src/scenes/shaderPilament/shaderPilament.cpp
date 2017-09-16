@@ -1,15 +1,15 @@
 //
-//  shaderVertical.cpp
+//  shaderPilament.cpp
 //  bp_25
 //
-//  Created by JeongHo Park on 09.09.17.
+//  Created by JeongHo Park on 10.09.17.
 //
 
-#include "shaderVertical.hpp"
+#include "shaderPilament.hpp"
 
 
 //--------------------------------------------------------------
-void shaderVertical::setup(){
+void shaderPilament::setup(){
     
     loadShader();
     
@@ -18,15 +18,16 @@ void shaderVertical::setup(){
 
 
 //--------------------------------------------------------------
-void shaderVertical::update(){
+void shaderPilament::update(){
     
     updateName();
     
 }
 
 
+
 //--------------------------------------------------------------
-void shaderVertical::updateShader(){
+void shaderPilament::updateShader(){
     
     shaderFbo.begin();
     ofClear(0, 0, 0, 0);
@@ -50,30 +51,32 @@ void shaderVertical::updateShader(){
     shader.end();
     shaderFbo.end();
     
-}
+};
+
 
 
 
 //--------------------------------------------------------------
-void shaderVertical::draw(){
+void shaderPilament::draw(){
     
     drawGlitch();
-
-
+    
+    
 }
 
 
 //--------------------------------------------------------------
-void shaderVertical::loadShader(){
+void shaderPilament::loadShader(){
 
-    shaderFile.open("shader/shaderVertical.frag");
-    shader.load("shader/shaderVertical.vert", shaderFile);
+    shaderFile.open("shader/shaderPilament.frag");
+    shader.load("shader/shaderPilament.vert", shaderFile);
 
 }
 
 
+
 //--------------------------------------------------------------
-string shaderVertical::setName(){
+string shaderPilament::setName(){
     
     return shaderFile.getBaseName();
     

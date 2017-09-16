@@ -1,22 +1,20 @@
 //
-//  shaderVertical.hpp
+//  shaderWater.hpp
 //  bp_25
 //
-//  Created by JeongHo Park on 09.09.17.
+//  Created by JeongHo Park on 10.09.17.
 //
 #pragma once
 
-#ifndef shaderVertical_hpp
-#define shaderVertical_hpp
+#ifndef shaderWater_hpp
+#define shaderWater_hpp
 
 #include "ofMain.h"
 #include "baseScene.hpp"
 
 
-class shaderVertical : public baseScene{
+class shaderWater : public baseScene{
   
-public:
-    
     void setup();
     void update();
     void draw();
@@ -24,8 +22,10 @@ public:
     void updateShader();
     
     string setName();
+
     
 };
 
 
-#endif /* shaderVertical_hpp */
+
+#endif /* shaderWater_hpp */

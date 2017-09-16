@@ -43,7 +43,7 @@ void guiManager::setup(){
 //--------------------------------------------------------------
 void guiManager::update(){
     
-    frameRate = ofToString(ofGetFrameRate(), 2);
+    frameRate = ofToString(ofGetFrameRate(), 1);
     
 }
 

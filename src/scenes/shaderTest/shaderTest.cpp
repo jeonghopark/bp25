@@ -1,32 +1,33 @@
 //
-//  shaderVertical.cpp
+//  shaderTest.cpp
 //  bp_25
 //
-//  Created by JeongHo Park on 09.09.17.
+//  Created by JeongHo Park on 12.09.17.
 //
 
-#include "shaderVertical.hpp"
+#include "shaderTest.hpp"
 
 
 //--------------------------------------------------------------
-void shaderVertical::setup(){
+void shaderTest::setup(){
     
     loadShader();
-    
+
 }
 
 
 
 //--------------------------------------------------------------
-void shaderVertical::update(){
-    
+void shaderTest::update(){
+
     updateName();
-    
+
 }
 
 
+
 //--------------------------------------------------------------
-void shaderVertical::updateShader(){
+void shaderTest::updateShader(){
     
     shaderFbo.begin();
     ofClear(0, 0, 0, 0);
@@ -50,33 +51,29 @@ void shaderVertical::updateShader(){
     shader.end();
     shaderFbo.end();
     
-}
+};
 
 
 
 //--------------------------------------------------------------
-void shaderVertical::draw(){
+void shaderTest::draw(){
     
     drawGlitch();
-
-
+    
 }
 
 
 //--------------------------------------------------------------
-void shaderVertical::loadShader(){
-
-    shaderFile.open("shader/shaderVertical.frag");
-    shader.load("shader/shaderVertical.vert", shaderFile);
-
+void shaderTest::loadShader(){
+    shaderFile.open("shader/shaderTest.frag");
+    shader.load("shader/shaderTest.vert", shaderFile);
 }
 
 
 //--------------------------------------------------------------
-string shaderVertical::setName(){
+string shaderTest::setName(){
     
     return shaderFile.getBaseName();
     
 }
-
 

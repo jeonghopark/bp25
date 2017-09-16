@@ -22,10 +22,11 @@ public:
     void setup();
     void update();
     void draw();
+    void loadShader();
     void updateShader();
     
+    string setName();
     
-    ofShader shaderNoise;
         
 };
 

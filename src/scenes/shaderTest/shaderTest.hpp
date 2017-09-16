@@ -1,31 +1,31 @@
 //
-//  shaderVertical.hpp
+//  shaderTest.hpp
 //  bp_25
 //
-//  Created by JeongHo Park on 09.09.17.
+//  Created by JeongHo Park on 12.09.17.
 //
-#pragma once
 
-#ifndef shaderVertical_hpp
-#define shaderVertical_hpp
+#ifndef shaderTest_hpp
+#define shaderTest_hpp
 
 #include "ofMain.h"
 #include "baseScene.hpp"
 
-
-class shaderVertical : public baseScene{
-  
+class shaderTest : public baseScene{
+    
 public:
     
     void setup();
     void update();
     void draw();
+
     void loadShader();
     void updateShader();
     
     string setName();
+  
     
 };
 
 
-#endif /* shaderVertical_hpp */
+#endif /* shaderTest_hpp */
