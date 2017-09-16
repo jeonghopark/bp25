@@ -1,15 +1,20 @@
 //
-//  shaderPilament.cpp
+//  logoScene.cpp
 //  bp_25
 //
-//  Created by JeongHo Park on 10.09.17.
+//  Created by JeongHo Park on 16.09.17.
 //
 
-#include "shaderPilament.hpp"
+#include "logoScene.hpp"
 
 
 //--------------------------------------------------------------
-void shaderPilament::setup(){
+void logoScene::setup(){
+    
+    bpLogo_trans.load("bp_logo_04_antialiasing.png");
+    
+    imgWidth = ofGetWidth() * 0.6;
+    imgHeight = ofGetWidth() * 0.6;
     
     loadShader();
     
@@ -18,7 +23,7 @@ void shaderPilament::setup(){
 
 
 //--------------------------------------------------------------
-void shaderPilament::update(){
+void logoScene::update(){
     
     updateName();
     
@@ -27,13 +32,15 @@ void shaderPilament::update(){
 
 
 //--------------------------------------------------------------
-void shaderPilament::updateShader(){
+void logoScene::updateShader(){
     
     shaderFbo.begin();
     ofClear(0, 0, 0, 0);
     shader.begin();
     shader.setUniform1f("u_time", ofGetElapsedTimef());
     shader.setUniform2f("u_resolution", ofGetWidth(), ofGetHeight());
+    
+    shader.setUniformTexture("tex0", bpLogo_trans.getTexture(), 0);
     
     shader.setUniform1f("u_control01", ofGetElapsedTimef());
     shader.setUniform1f("u_control02", ofGetElapsedTimef());
@@ -48,6 +55,10 @@ void shaderPilament::updateShader(){
     
     ofDrawRectangle(0,0,ofGetWidth(), ofGetHeight());
     
+    float _x = (ofGetWidth() - imgWidth) * 0.5;
+    float _y = (ofGetHeight() - imgHeight) * 0.5;
+    bpLogo_trans.draw(_x, _y, imgWidth, imgHeight);
+    
     shader.end();
     shaderFbo.end();
     
@@ -55,31 +66,33 @@ void shaderPilament::updateShader(){
 
 
 
-
 //--------------------------------------------------------------
-void shaderPilament::draw(){
+void logoScene::draw(){
     
     drawGlitch();
     
+    ofEnableBlendMode(OF_BLENDMODE_ALPHA);
+    
+//    float _x = (ofGetWidth() - imgWidth) * 0.5;
+//    float _y = (ofGetHeight() - imgHeight) * 0.5;
+//    bpLogo_trans.draw(_x, _y, imgWidth, imgHeight);
+    
+    ofDisableBlendMode();
     
 }
 
 
 //--------------------------------------------------------------
-void shaderPilament::loadShader(){
-
-    shaderFile.open("shader/shaderPilament.frag");
-    shader.load("shader/shaderPilament.vert", shaderFile);
-
+void logoScene::loadShader(){
+    shaderFile.open("shader/logoScene.frag");
+    shader.load("shader/logoScene.vert", shaderFile);
 }
-
 
 
 //--------------------------------------------------------------
-string shaderPilament::setName(){
+string logoScene::setName(){
     
-    return shaderFile.getBaseName();
+    return "Logo";
     
 }
-
 

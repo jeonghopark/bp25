@@ -17,8 +17,13 @@ void ofApp::setup(){
     
     ofBackground(0);
     
+//    bpLogo_trans.load("bp_logo_04_antialiasing.png");
+//    imgWidth = ofGetWidth() * 0.6;
+//    imgHeight = ofGetWidth() * 0.6;
+
     
     SM.scenes.push_back( new blankScene() );
+     SM.scenes.push_back( new logoScene() );
     SM.scenes.push_back( new basicLineDrawing() );
     SM.scenes.push_back( new shaderNoise() );
     SM.scenes.push_back( new shaderVertical() );
@@ -27,7 +32,6 @@ void ofApp::setup(){
     SM.scenes.push_back( new shaderHotShower() );
     SM.scenes.push_back( new shaderCrystal() );
     SM.scenes.push_back( new shaderOil() );
-    SM.scenes.push_back( new shaderPilament() );
     SM.scenes.push_back( new shaderNoiseBlur() );
     SM.scenes.push_back( new shaderWater() );
     SM.scenes.push_back( new shaderCircleNoise() );
@@ -68,12 +72,19 @@ void ofApp::draw(){
 
     ofPushStyle();
     ofEnableAlphaBlending();
-    if( SM.currentScene != 0 ) {
+    if( SM.currentScene != 0 && SM.currentScene != 1 ) {
         HouseBlackCover.draw();
     }
     ofDisableAlphaBlending();
     ofPopStyle();
     
+
+//    ofEnableBlendMode(OF_BLENDMODE_ALPHA);
+//    float _x = (ofGetWidth() - imgWidth) * 0.5;
+//    float _y = (ofGetHeight() - imgHeight) * 0.5;
+//    bpLogo_trans.draw(_x, _y, imgWidth, imgHeight);
+//    ofDisableBlendMode();
+
 }
 
 

@@ -43,15 +43,17 @@ public:
         shaderGlitch.setup(&shaderFbo);
     };
     
+    
     //--------------------------------------------------------------
     void drawGlitch(){
+        
         //        ofSetColor(255);
-//        shaderGlitch.generateFx();
+        shaderGlitch.generateFx();
         //        ofSetColor(255);
-
         shaderFbo.draw(0, 0);
         
     }
+    
     
     //--------------------------------------------------------------
     void glitchOn(int key){
@@ -73,6 +75,8 @@ public:
         if (key == 't') shaderGlitch.setFx(OFXPOSTGLITCH_CR_BLUEINVERT    , true);
         if (key == 'z') shaderGlitch.setFx(OFXPOSTGLITCH_CR_REDINVERT    , true);
         if (key == 'u') shaderGlitch.setFx(OFXPOSTGLITCH_CR_GREENINVERT    , true);
+        
+        if (key == 'l') shaderGlitch.loadShader();
     };
     
     //--------------------------------------------------------------

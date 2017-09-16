@@ -1,5 +1,5 @@
 //
-//  shaderBasic.hpp
+//  shaderNoise.hpp
 //  bp 2.5
 //
 //  Created by JeongHo Park on 07.09.17.
@@ -7,14 +7,14 @@
 #pragma once
 
 
-#ifndef shaderBasic_hpp
-#define shaderBasic_hpp
+#ifndef shaderNoise_hpp
+#define shaderNoise_hpp
 
 #include "ofMain.h"
 #include "baseScene.hpp"
 
 
-class shaderBasic : public baseScene{
+class shaderNoise : public baseScene{
     
     
 public:
@@ -22,11 +22,13 @@ public:
     void setup();
     void update();
     void draw();
+    void loadShader();
     void updateShader();
-
+    
     string setName();
     
 };
 
 
-#endif /* shaderBasic_hpp */
+#endif /* shaderNoise_hpp */
+

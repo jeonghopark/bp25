@@ -9,6 +9,7 @@
 #include "houseBlackCover.hpp"
 
 #include "blankScene.hpp"
+#include "logoScene.hpp"
 #include "basicLineDrawing.hpp"
 #include "shaderNoise.hpp"
 #include "shaderVertical.hpp"
@@ -17,12 +18,11 @@
 #include "shaderHotShower.hpp"
 #include "shaderCrystal.hpp"
 #include "shaderOil.hpp"
-#include "shaderPilament.hpp"
 #include "shaderNoiseBlur.hpp"
 #include "shaderWater.hpp"
 #include "shaderCircleNoise.hpp"
 #include "shaderPlasma.hpp"
-#include "shaderStar.hpp"
+//#include "shaderStar.hpp"
 #include "shaderWhitehole.hpp"
 #include "shaderJupiter.hpp"
 #include "shaderDiffusion.hpp"
@@ -60,7 +60,11 @@ public:
     
     
     houseBlackCover HouseBlackCover;
+
     
+//    ofImage bpLogo_trans;
+//    float imgWidth, imgHeight;
+
     
 };
 
