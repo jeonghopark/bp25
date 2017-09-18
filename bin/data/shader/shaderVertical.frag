@@ -4,7 +4,6 @@
 
 out vec4 outputColor;
 
-
 uniform float u_time;
 uniform vec2 u_mouse;
 uniform vec2 u_resolution;
@@ -31,18 +30,30 @@ float fire(vec2 n) {
 
 void main( void ) {
     
-    float t = u_time * 0.1;
-    vec2 uv = gl_FragCoord.xy / u_resolution.y;
+    float directSpeed = -0.1;
+    float t = u_time * directSpeed;
+    vec2 uv = gl_FragCoord.xy / u_resolution.xy;
+
     
-    uv.y += uv.x < 1.0 ?23.0 + t * .35 : -11.0 + t * 1.3;
-    uv.x = abs(uv.x - 0.3);
-    uv *= 2.7;
-    
-    float q = fire(uv - t * .013) / 2.0;
-    vec2 r = vec2(fire(uv + q / 2.0 + t - uv.x - uv.y), fire(uv + q - t));
+    // one column
+    uv.y += 23.0 * sin(t) * 0.01 + t * 1.35;
+    uv.x = abs(uv.x - 0.5);
+    uv *= 10.7;
+
+    // Multi Column
+    // for (int i=0; i<5; i++) {
+    //     uv.y += t / -2.3;
+    //     uv.x = abs(uv.x - 0.25);
+    //     uv *= 1.4;
+    // }
+
+
+    float q = fire(uv - t * 1.33) / 2.0;
+    vec2 r = vec2(fire(uv + q / 2.0 + t - uv.x - uv.y), fire(uv + q - u_time));
     vec3 color = vec3(1.0 / (pow(vec3(0.1, 0.1, .1) + 0.61, vec3(4.0))));
     
-    float grad = pow((r.y + r.y) * max(.0, uv.x) + .1, 1.0);
+    float _lineTick = 1.1;
+    float grad = pow((r.y * _lineTick + r.y * _lineTick) * max(0.1, uv.x) + 0.1, 2.0);
     color = ramp(grad);
     color /= (0.10 + max(vec3(1), color));
     outputColor = vec4(color, 1.0);

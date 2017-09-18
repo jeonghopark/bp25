@@ -25,7 +25,6 @@ class logoScene : public baseScene{
     
     string setName();
     
-    
     ofImage bpLogo_trans;
     float imgWidth, imgHeight;
 

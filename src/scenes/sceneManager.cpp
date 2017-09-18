@@ -83,5 +83,3 @@ void sceneManager::glitchOff(int key){
     
 }
 
-
-

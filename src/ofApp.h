@@ -4,6 +4,7 @@
 
 #include "sceneManager.hpp"
 #include "guiManager.hpp"
+#include "MidiInput.hpp"
 #include "baseScene.hpp"
 
 #include "houseBlackCover.hpp"
@@ -56,12 +57,12 @@ public:
     vector<ofVec2f> houseObjectPoint;
     
     guiManager GM;
+    MidiInput MM;
     sceneManager SM;
     
     
     houseBlackCover HouseBlackCover;
-
-    
+        
 //    ofImage bpLogo_trans;
 //    float imgWidth, imgHeight;
 

@@ -13,6 +13,8 @@
 #include "ofxPostGlitch.h"
 
 #include "guiManager.hpp"
+//#include "MidiInput.hpp"
+
 
 class baseScene {
   
@@ -28,6 +30,7 @@ public:
     virtual string setName(){ return "0"; };
 
     guiManager * GM;
+//    MidiInput MM;
     
     void updateName() { GM->sceneName = setName(); };
     
@@ -41,6 +44,7 @@ public:
     void setupGlitch(){
         shaderFbo.allocate(550, 880);
         shaderGlitch.setup(&shaderFbo);
+//        MM.setup();
     };
     
     
@@ -52,6 +56,10 @@ public:
         //        ofSetColor(255);
         shaderFbo.draw(0, 0);
         
+//        MM.update();
+//        MM.draw();
+//        
+//        glitchOn( MM.midiMessage.pitch - 55 );
     }
     
     
@@ -66,17 +74,17 @@ public:
         if (key == '7') shaderGlitch.setFx(OFXPOSTGLITCH_NOISE            , true);
         if (key == '8') shaderGlitch.setFx(OFXPOSTGLITCH_SLITSCAN        , true);
         if (key == '9') shaderGlitch.setFx(OFXPOSTGLITCH_SWELL            , true);
-        if (key == '0') shaderGlitch.setFx(OFXPOSTGLITCH_INVERT            , true);
         
-        if (key == 'q') shaderGlitch.setFx(OFXPOSTGLITCH_CR_HIGHCONTRAST, true);
-        if (key == 'w') shaderGlitch.setFx(OFXPOSTGLITCH_CR_BLUERAISE    , true);
-        if (key == 'e') shaderGlitch.setFx(OFXPOSTGLITCH_CR_REDRAISE    , true);
-        if (key == 'r') shaderGlitch.setFx(OFXPOSTGLITCH_CR_GREENRAISE    , true);
-        if (key == 't') shaderGlitch.setFx(OFXPOSTGLITCH_CR_BLUEINVERT    , true);
-        if (key == 'z') shaderGlitch.setFx(OFXPOSTGLITCH_CR_REDINVERT    , true);
-        if (key == 'u') shaderGlitch.setFx(OFXPOSTGLITCH_CR_GREENINVERT    , true);
+        if (key == 'q') shaderGlitch.setFx(OFXPOSTGLITCH_INVERT            , true);
+        if (key == 'w') shaderGlitch.setFx(OFXPOSTGLITCH_CR_HIGHCONTRAST, true);
+        if (key == 'e') shaderGlitch.setFx(OFXPOSTGLITCH_CR_BLUERAISE    , true);
+        if (key == 'r') shaderGlitch.setFx(OFXPOSTGLITCH_CR_REDRAISE    , true);
+        if (key == 't') shaderGlitch.setFx(OFXPOSTGLITCH_CR_GREENRAISE    , true);
+        if (key == 'z') shaderGlitch.setFx(OFXPOSTGLITCH_CR_BLUEINVERT    , true);
+        if (key == 'u') shaderGlitch.setFx(OFXPOSTGLITCH_CR_REDINVERT    , true);
+        if (key == 'i') shaderGlitch.setFx(OFXPOSTGLITCH_CR_GREENINVERT    , true);
         
-        if (key == 'l') shaderGlitch.loadShader();
+        if (key == 12) shaderGlitch.loadShader();
     };
     
     //--------------------------------------------------------------
@@ -90,15 +98,15 @@ public:
         if (key == '7') shaderGlitch.setFx(OFXPOSTGLITCH_NOISE            , false);
         if (key == '8') shaderGlitch.setFx(OFXPOSTGLITCH_SLITSCAN        , false);
         if (key == '9') shaderGlitch.setFx(OFXPOSTGLITCH_SWELL            , false);
-        if (key == '0') shaderGlitch.setFx(OFXPOSTGLITCH_INVERT            , false);
-        
-        if (key == 'q') shaderGlitch.setFx(OFXPOSTGLITCH_CR_HIGHCONTRAST, false);
-        if (key == 'w') shaderGlitch.setFx(OFXPOSTGLITCH_CR_BLUERAISE    , false);
-        if (key == 'e') shaderGlitch.setFx(OFXPOSTGLITCH_CR_REDRAISE    , false);
-        if (key == 'r') shaderGlitch.setFx(OFXPOSTGLITCH_CR_GREENRAISE    , false);
-        if (key == 't') shaderGlitch.setFx(OFXPOSTGLITCH_CR_BLUEINVERT    , false);
-        if (key == 'z') shaderGlitch.setFx(OFXPOSTGLITCH_CR_REDINVERT    , false);
-        if (key == 'u') shaderGlitch.setFx(OFXPOSTGLITCH_CR_GREENINVERT    , false);
+
+        if (key == 'q') shaderGlitch.setFx(OFXPOSTGLITCH_INVERT            , false);
+        if (key == 'w') shaderGlitch.setFx(OFXPOSTGLITCH_CR_HIGHCONTRAST, false);
+        if (key == 'e') shaderGlitch.setFx(OFXPOSTGLITCH_CR_BLUERAISE    , false);
+        if (key == 'r') shaderGlitch.setFx(OFXPOSTGLITCH_CR_REDRAISE    , false);
+        if (key == 't') shaderGlitch.setFx(OFXPOSTGLITCH_CR_GREENRAISE    , false);
+        if (key == 'z') shaderGlitch.setFx(OFXPOSTGLITCH_CR_BLUEINVERT    , false);
+        if (key == 'u') shaderGlitch.setFx(OFXPOSTGLITCH_CR_REDINVERT    , false);
+        if (key == 'i') shaderGlitch.setFx(OFXPOSTGLITCH_CR_GREENINVERT    , false);
     };
     
     
