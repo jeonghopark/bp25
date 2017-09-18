@@ -13,6 +13,7 @@ void guiManager::setupGui(){
     
     mainGui.setName("Main");
     mainGui.add(frameRate.set("FPS", ""));
+    mainGui.add(midiBar.set("BAR", ""));
     mainGui.add(sceneName.set("Scene", ""));
     main.setup();
     main.setPosition(10, 10);
@@ -23,7 +24,7 @@ void guiManager::setupGui(){
     basicLineDrawing.add(motion.set("Motion", true));
     basicLineDrawing.add(motionSpeed.set("Motion Speed", 1, 0.3, 5));
     panel.setup();
-    panel.setPosition(10, 100);
+    panel.setPosition(10, 150);
     panel.add(basicLineDrawing);
     
     ofSetBackgroundColor(30);

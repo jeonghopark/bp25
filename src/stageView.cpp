@@ -62,15 +62,15 @@ void stageView::draw(){
 //--------------------------------------------------------------
 void stageView::keyPressed(int key){
     
-    if (key == OF_KEY_RIGHT){
+    if (key == 14){
         SM.nextScene();
     }
     
-    if (key == OF_KEY_LEFT){
+    if (key == 16){
         SM.previousScene();
     }
     
-    if (key == OF_KEY_UP){
+    if (key == 12){
         SM.loadShader();
     }
     

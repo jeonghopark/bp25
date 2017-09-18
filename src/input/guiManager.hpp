@@ -31,8 +31,10 @@ public:
     ofParameter<bool> houseView;
     ofParameter<float> motionSpeed;
     
+    
     ofParameterGroup mainGui;
     ofParameter<string> frameRate;
+    ofParameter<string> midiBar;
     ofParameter<string> sceneName;
     
     ofxPanel main;

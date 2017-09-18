@@ -62,7 +62,7 @@ public:
     
     
     houseBlackCover HouseBlackCover;
-        
+    
 //    ofImage bpLogo_trans;
 //    float imgWidth, imgHeight;
 

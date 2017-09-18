@@ -26,10 +26,6 @@ void MidiInput::setup() {
 
 //--------------------------------------------------------------
 void MidiInput::update(){
-    
-    text << ofxMidiMessage::getStatusString(midiMessage.status);
-    status = text.str();
-    text.str(""); // clear
 
 }
 
@@ -42,7 +38,6 @@ void MidiInput::draw(){
 
     // draw the last recieved message contents to the screen
     text << "Received: " << ofxMidiMessage::getStatusString(midiMessage.status);
-    cout << text.str() << endl;
     ofDrawBitmapString(text.str(), 20, 20);
     text.str(""); // clear
     

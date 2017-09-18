@@ -12,6 +12,7 @@ void ofApp::drawGui(ofEventArgs & args){
     GM.draw();
 }
 
+
 //--------------------------------------------------------------
 void ofApp::setup(){
     
@@ -64,8 +65,6 @@ void ofApp::update(){
     
     SM.update();
     GM.update();
-    MM.update();
-    
     
 }
 
@@ -75,10 +74,9 @@ void ofApp::update(){
 //--------------------------------------------------------------
 void ofApp::draw(){
     
-    
     SM.draw();
-//    MM.draw();
-    
+
+    GM.midiBar = ofToString(MM.tempoqNotes, 0);
     
     ofPushStyle();
     ofEnableAlphaBlending();
