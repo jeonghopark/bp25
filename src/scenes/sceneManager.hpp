@@ -13,6 +13,7 @@
 #include "ofMain.h"
 #include "baseScene.hpp"
 
+#include "fftInput.hpp"
 
 class sceneManager {
   
@@ -35,6 +36,7 @@ public:
     void glitchOn(int key);
     void glitchOff(int key);
 
+    fftInput FF;
     
 };
 

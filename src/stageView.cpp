@@ -28,8 +28,27 @@ void stageView::setup(){
     ofBackground(0);
     
     SM.scenes.push_back( new blankScene() );
+    SM.scenes.push_back( new logoScene() );
+    SM.scenes.push_back( new basicLineDrawing() );
+    SM.scenes.push_back( new shaderNoise() );
+    SM.scenes.push_back( new shaderVertical() );
+    SM.scenes.push_back( new shaderLine() );
+    SM.scenes.push_back( new shaderSun() );
+    SM.scenes.push_back( new shaderHotShower() );
+    SM.scenes.push_back( new shaderCrystal() );
+    SM.scenes.push_back( new shaderOil() );
+    SM.scenes.push_back( new shaderNoiseBlur() );
+    SM.scenes.push_back( new shaderWater() );
+    SM.scenes.push_back( new shaderCircleNoise_stage() );
     SM.scenes.push_back( new shaderPlasma() );
-    SM.scenes.push_back( new shaderCircleNoise() );
+    //    SM.scenes.push_back( new shaderStar() );
+    SM.scenes.push_back( new shaderWhitehole() );
+    SM.scenes.push_back( new shaderJupiter() );
+    SM.scenes.push_back( new shaderDiffusion() );
+    SM.scenes.push_back( new shaderTest() );
+    SM.setup();
+
+    
     SM.setup();
     
     for (int i = 0; i < SM.scenes.size(); i++){

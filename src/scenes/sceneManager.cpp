@@ -16,6 +16,8 @@ void sceneManager::setup(){
     }
     
     currentScene = 0;
+    
+    FF.setup();
 }
 
 
@@ -24,7 +26,16 @@ void sceneManager::update(){
     
     scenes[currentScene]->update();
     scenes[currentScene]->updateShader();
-
+    
+    FF.draw();
+    
+    float _sum = 0;
+    for (int i=0; i<3; i++) {
+        _sum += FF.drawBins[i] / 3.0;
+    }
+    
+    scenes[currentScene]->fft1 = _sum;
+    cout << _sum << endl;
 }
 
 

@@ -13,6 +13,8 @@
 #include "ofMain.h"
 #include "baseScene.hpp"
 
+//#include "fftInput.hpp"
+
 
 class shaderNoise : public baseScene{
     
@@ -26,6 +28,8 @@ public:
     void updateShader();
     
     string setName();
+    
+//    fftInput FF;
     
 };
 

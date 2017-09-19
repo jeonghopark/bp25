@@ -43,7 +43,7 @@ void logoScene::updateShader(){
     shader.setUniformTexture("tex0", bpLogo_trans.getTexture(), 0);
     
     shader.setUniform1f("u_control01", ofGetElapsedTimef());
-    shader.setUniform1f("u_control02", ofGetElapsedTimef());
+    shader.setUniform1f("u_control02", fft1);
     shader.setUniform1f("u_control03", ofGetElapsedTimef());
     shader.setUniform1f("u_control04", ofGetElapsedTimef());
     shader.setUniform1f("u_control05", ofGetElapsedTimef());

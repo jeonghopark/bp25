@@ -8,6 +8,9 @@ uniform float u_time;
 uniform vec2 u_mouse;
 uniform vec2 u_resolution;
 
+uniform float u_control02;
+
+
 
 float rand(vec2 n) {
     return fract(sin(dot(n, vec2(12.9898,12.1414))) * 83758.5453);
@@ -25,12 +28,13 @@ vec3 ramp(float t) {
 }
 
 float fire(vec2 n) {
-    return noise(n) + noise(n * 2.1) * .6 + noise(n * 4.4) * 1.02;
+	float _flareNoise = -10.0 * sin(u_control02);
+    return noise(n) + noise(n * 2.1) * .6 + noise(n * 4.4) * 1.02 * _flareNoise;
 }
 
 void main( void ) {
     
-    float directSpeed = -0.1;
+    float directSpeed = -0.05;
     float t = u_time * directSpeed;
     vec2 uv = gl_FragCoord.xy / u_resolution.xy;
 
@@ -40,11 +44,26 @@ void main( void ) {
     uv.x = abs(uv.x - 0.5);
     uv *= 10.7;
 
-    // Multi Column
+    // Multi Column + Pattern Effect
     // for (int i=0; i<5; i++) {
     //     uv.y += t / -2.3;
     //     uv.x = abs(uv.x - 0.25);
-    //     uv *= 1.4;
+    //     uv *= 1.4 * ((u_control02 + 0.1) * 2.0);
+    // }
+
+
+    // Multi Column Original
+    // for (int i=0; i<5; i++) {
+    //     uv.y += t / -1.3;
+    //     uv.x = abs(uv.x - 2.25);
+    //     uv *= 1.1;
+    // }
+
+    // Multi Column
+    // for (int i=0; i<5; i++) {
+    //     uv.y += t / -1.3;
+    //     uv.x = abs(uv.x - (u_control02 * 1.0) * 5.0 ) * 0.8;
+    //     uv *= 1.1;
     // }
 
 
@@ -56,5 +75,10 @@ void main( void ) {
     float grad = pow((r.y * _lineTick + r.y * _lineTick) * max(0.1, uv.x) + 0.1, 2.0);
     color = ramp(grad);
     color /= (0.10 + max(vec3(1), color));
+
+    color.r = color.r * 10.0;
+    color.g = color.g;
+    color.b = color.b;
+
     outputColor = vec4(color, 1.0);
 }

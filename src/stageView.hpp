@@ -18,8 +18,24 @@
 #include "baseScene.hpp"
 
 #include "blankScene.hpp"
+#include "logoScene.hpp"
+#include "basicLineDrawing.hpp"
+#include "shaderNoise.hpp"
+#include "shaderVertical.hpp"
+#include "shaderLine.hpp"
+#include "shaderSun.hpp"
+#include "shaderHotShower.hpp"
+#include "shaderCrystal.hpp"
+#include "shaderOil.hpp"
+#include "shaderNoiseBlur.hpp"
+#include "shaderWater.hpp"
+#include "shaderCircleNoise_stage.hpp"
 #include "shaderPlasma.hpp"
-#include "shaderCircleNoise.hpp"
+//#include "shaderStar.hpp"
+#include "shaderWhitehole.hpp"
+#include "shaderJupiter.hpp"
+#include "shaderDiffusion.hpp"
+#include "shaderTest.hpp"
 
 
 class stageView : public ofBaseApp{
@@ -34,7 +50,6 @@ public:
     void keyReleased(int key);
 
     guiManager GM;
-    
     sceneManager SM;
     
 };

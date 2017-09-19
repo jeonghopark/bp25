@@ -5,6 +5,7 @@ out vec4 outputColor;
 uniform vec2 u_resolution;
 uniform vec2 u_mouse;
 uniform float u_time;
+uniform float u_control02;
 
 float random (in vec2 _st) {
     return fract( sin( dot(_st.xy, vec2(12.9898,78.233)) ) * 43758.5453123 );
@@ -57,7 +58,7 @@ float pattern( in vec2 p ) {
     vec2 r = vec2( fbm( p + 4.0 * q * 0.01 + vec2(1.7, 0.2) ), fbm( p + 4.0 * q + vec2(8.3, 2.8) ) );
 
     // 노이즈의 변형 정도. 0 으로 설정시 기본적인 noise 와 비슷해짐.
-    float _p = abs( cos(u_time * 0.25) + 2.0 ) * 0.0;
+    float _p = abs( cos(u_time * 0.25) + 2.0 ) * u_control02;
     return fbm( p + 4.0 * r * _p);
 }
 

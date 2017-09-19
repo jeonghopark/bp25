@@ -39,10 +39,11 @@ public:
     ofFbo            shaderFbo;
     ofxPostGlitch    shaderGlitch;
     
+    float fft1;
     
     //--------------------------------------------------------------
     void setupGlitch(){
-        shaderFbo.allocate(550, 880);
+        shaderFbo.allocate(ofGetWidth(), ofGetHeight());
         shaderGlitch.setup(&shaderFbo);
 //        MM.setup();
     };

@@ -1,17 +1,18 @@
 //
-//  shaderPlasma.cpp
+//  shaderCircleNoise_stage.cpp
 //  bp_25
 //
 //  Created by JeongHo Park on 10.09.17.
 //
 
-#include "shaderPlasma.hpp"
+#include "shaderCircleNoise_stage.hpp"
+
 
 
 
 
 //--------------------------------------------------------------
-void shaderPlasma::setup(){
+void shaderCircleNoise_stage::setup(){
     
     loadShader();
     
@@ -20,14 +21,16 @@ void shaderPlasma::setup(){
 
 
 //--------------------------------------------------------------
-void shaderPlasma::update(){
-    updateName();
+void shaderCircleNoise_stage::update(){
+ 
+	updateName();
+
 }
 
 
 
 //--------------------------------------------------------------
-void shaderPlasma::updateShader(){
+void shaderCircleNoise_stage::updateShader(){
     
     shaderFbo.begin();
     ofClear(0, 0, 0, 0);
@@ -56,26 +59,25 @@ void shaderPlasma::updateShader(){
 
 
 //--------------------------------------------------------------
-void shaderPlasma::draw(){
+void shaderCircleNoise_stage::draw(){
     
     drawGlitch();
     
-    
 }
 
 
 //--------------------------------------------------------------
-void shaderPlasma::loadShader(){
-    shaderFile.open("shader/shaderPlasma.frag");
-    shader.load("shader/shaderPlasma.vert", shaderFile);
+void shaderCircleNoise_stage::loadShader(){
+
+    shaderFile.open("shader/shaderCircleNoise_stage.frag");
+    shader.load("shader/shaderCircleNoise_stage.vert", shaderFile);
+
 }
 
-
-
 //--------------------------------------------------------------
-string shaderPlasma::setName(){
-    
+string shaderCircleNoise_stage::setName(){
+
     return shaderFile.getBaseName();
-    
+
 }
 

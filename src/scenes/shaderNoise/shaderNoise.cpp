@@ -13,6 +13,8 @@ void shaderNoise::setup(){
     
     loadShader();
     
+//    FF.setup();
+    
 }
 
 
@@ -21,6 +23,8 @@ void shaderNoise::setup(){
 void shaderNoise::update(){
     
     updateName();
+    
+//    FF.draw();
     
 }
 
@@ -37,7 +41,7 @@ void shaderNoise::updateShader(){
     shader.setUniform2f("u_resolution", ofGetWidth(), ofGetHeight());
     
     shader.setUniform1f("u_control01", ofGetElapsedTimef());
-    shader.setUniform1f("u_control02", ofGetElapsedTimef());
+    shader.setUniform1f("u_control02", fft1);
     shader.setUniform1f("u_control03", ofGetElapsedTimef());
     shader.setUniform1f("u_control04", ofGetElapsedTimef());
     shader.setUniform1f("u_control05", ofGetElapsedTimef());
